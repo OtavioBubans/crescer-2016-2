@@ -32,15 +32,30 @@ public class ElfoTest{
     public void elfoNasceComFlecha(){
         Elfo elfoDoTeste = new Elfo("Legolas");
         assertEquals("Flechas",elfoDoTeste.getFlecha().getDescricao());
-        assertEquals(42, elfoDoTeste.getFlecha().getQuantidade());    
+        assertEquals(42, elfoDoTeste.getFlecha().getQuantidade());
     }
     
     @Test
     public void atiraFlecha (){
+        //Arrange
         Elfo elfoDoTeste = new Elfo("Legolas");
+        //Act
         elfoDoTeste.atirarFlecha();
+        //Assert
         assertEquals(41, elfoDoTeste.getFlecha().getQuantidade());
         assertEquals(1, elfoDoTeste.getExperiencia());
+    }
+   
+    @Test
+    public void atiraDuasFlechas (){
+        //Arrange
+        Elfo elfoDoTeste = new Elfo("Legolas");
+        //Act
+        elfoDoTeste.atirarFlecha();
+        elfoDoTeste.atirarFlecha();
+        //Assert
+        assertEquals(40, elfoDoTeste.getFlecha().getQuantidade());
+        assertEquals(2, elfoDoTeste.getExperiencia());
     }
      
     @Test
@@ -53,6 +68,7 @@ public class ElfoTest{
         assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());        
     }
     
+    
     @Test
     public void testaFlechasNegativas(){ 
         Elfo elfoDoTeste = new Elfo("Legolas");
@@ -63,10 +79,44 @@ public class ElfoTest{
         
         elfoDoTeste.atirarFlecha(); // Aqui simula a tentativa 
                                     // de atirar uma flecha com a quantidade 0
-        
         assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void tiraVidaDwarves(){
+        Elfo elfoDoTeste = new Elfo("Légolas");
+        Dwarves anao = new Dwarves();
+        elfoDoTeste.atirarEmDwarves(anao);
+        assertEquals(100,anao.getVida());
+    }
+    
+    //@Test
+   // public void elfoAtiraFlechaEmDwarf(){
         
+   // }
+   
+   
+   @Test
+   public void testaTexto(){
+       Elfo elfoTeste =  new Elfo("Légolas");
+       elfoTeste.toString();
+       assertEquals("Légolas", elfoTeste.getNome());
+       assertEquals(42, elfoTeste.getFlecha());
+      // assertEquals();
+       
+    }
+    
+    @Test
+    public void elfoNovoConstrutor(){
+        
+        Elfo elfoTeste = new Elfo("Zee",50);
+        
+        assertEquals("Zee", elfoTeste.getNome());
+        assertEquals(50, elfoTeste.getFlecha().getQuantidade());
         
     }
+    
+    
+    
      
 }

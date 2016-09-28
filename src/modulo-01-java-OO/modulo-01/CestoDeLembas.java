@@ -8,12 +8,12 @@ public class CestoDeLembas{
     }
     
     public boolean dividirLembas(int lembas){
-        
         if( podeDividir(lembas) == true && lembas >= 2 && lembas <=100)
             return true;
         else{
             return false;
         }
+    
          
     }
     
