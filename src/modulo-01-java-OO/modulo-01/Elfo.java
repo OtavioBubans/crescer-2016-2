@@ -20,18 +20,27 @@ public class Elfo {
     }
     
     public void atirarFlecha() {
-        flecha.setQuantidade(flecha.getQuantidade() - 1);
-        experiencia++;
+        if(flecha.getQuantidade() >= 0){
+            flecha.setQuantidade(flecha.getQuantidade() - 1);
+            experiencia++;
+        }
     }
     
-    public void atirarFlechaRefactory(){
-       
-        flecha.setQuantidade(flecha.getQuantidade()-1);
-        experiencia++;
-    }
+   // public void atirarFlechaRefactory(){
+   //     flecha.setQuantidade(flecha.getQuantidade()-1);
+   //     experiencia++;
+   // }
     
     public Item getArco(){
         return arco;
+    }
+    
+    public Item getFlecha(){
+        return flecha;
+    }
+    
+    public int getExperiencia(){
+        return experiencia;
     }
 }
 
