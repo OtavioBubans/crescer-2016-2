@@ -59,11 +59,12 @@ public class ElfoTest{
          
         while( elfoDoTeste.getFlecha().getQuantidade() != 0){
             elfoDoTeste.atirarFlecha();
-        }
-       // assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());
+        } 
         
-        elfoDoTeste.atirarFlecha();
-        assertEquals((0-1), elfoDoTeste.getFlecha().getQuantidade());
+        elfoDoTeste.atirarFlecha(); // Aqui simula a tentativa 
+                                    // de atirar uma flecha com a quantidade 0
+        
+        assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());
         
         
     }

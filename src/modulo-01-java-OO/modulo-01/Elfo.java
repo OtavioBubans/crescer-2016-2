@@ -8,7 +8,7 @@ public class Elfo {
         nome = n;
         arco = new Item("Arco", 1);
         flecha = new Item("Flechas", 42);
-        experiencia = 0;
+        //experiencia = 0;
     }
     
     public void setNome(String n) {
@@ -20,7 +20,7 @@ public class Elfo {
     }
     
     public void atirarFlecha() {
-        if(flecha.getQuantidade() >= 0){
+        if(flecha.getQuantidade() >= 1){
             flecha.setQuantidade(flecha.getQuantidade() - 1);
             experiencia++;
         }
@@ -42,6 +42,15 @@ public class Elfo {
     public int getExperiencia(){
         return experiencia;
     }
+    
+    public void atirarEmDwarves( Dwarves anao ){
+        if(flecha.getQuantidade() > 1){
+            atirarFlecha();
+            anao.setVida(anao.getVida() - 10);
+        }
+        
+    }
+    
 }
 
 
