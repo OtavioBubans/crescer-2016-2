@@ -1,21 +1,24 @@
 
 public class Dwarves{
+     
+    private String nome;
+    private int vida = 110;
+    private DataTerceiraEra dataNascimento;
     
-   // private String nome;
-    private int vida=110;
+    //private double numeroSorte;
     
-   /** public Dwarves(String nome){
+    public Dwarves(String nome, DataTerceiraEra dataNascimento){
         this.nome=nome;
-        vida=110;
-    }*/
+        this.dataNascimento = dataNascimento;
+        //vida=110;
+    }
     
-    // Permitir que Elfos atirem flechas em Dwarves (anões)! 
-    // Lembrem-se que um Dwarf nasce com 110 unidades de vida 
-    // e perde 10 a cada flechada.
+    public Dwarves(){
+        dataNascimento = new DataTerceiraEra(1,1,1);
+    }
     
     public void perdeVida(){
-        vida -= 10;;
-        
+        vida -= 10;    
     }
     
     public int getVida(){
@@ -27,7 +30,18 @@ public class Dwarves{
         
     }
     
-    
-    
-  
+    public double getNumeroSorte(){
+        double numeroSorte = 101.0;
+        if(dataNascimento.ehBissexto() == true && vida >= 80 && vida <=90){
+            numeroSorte = numeroSorte * -33;
+        }
+        
+        if(dataNascimento.ehBissexto() == false && nome == "Seixas" && nome == "Meireles"){
+           numeroSorte = numeroSorte * 33;
+           numeroSorte = numeroSorte % 100;
+        }
+        return numeroSorte;
+        
+    }
+
 }
