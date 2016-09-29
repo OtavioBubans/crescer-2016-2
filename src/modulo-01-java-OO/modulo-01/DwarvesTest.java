@@ -10,11 +10,18 @@ public class DwarvesTest
 {
     
     @Test
-    public void dwarfNasce10Vida(){
+    public void dwarfNasce110Vida(){
         
         Dwarves dwarf = new Dwarves();
-        assertEquals(110, dwarf.getVida());  
         
+        assertEquals(110, dwarf.getVida());  
+    }
+    
+    @Test
+    public void perdeVidaUmaVez(){
+        Dwarves dwarf = new Dwarves();
+        dwarf.perdeVida();
+        assertEquals(100, dwarf.getVida());
     }
     
     @Test
@@ -28,8 +35,6 @@ public class DwarvesTest
         dwarf.perdeVida();
         
         assertEquals(50, dwarf.getVida());
-        
-        
     }
     
 }
