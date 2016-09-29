@@ -17,12 +17,14 @@ public class Dwarves{
     }
     
     public Dwarves(){
-        dataNascimento = new DataTerceiraEra(1,1,1);
-        status = Status.VIVO;
+        //dataNascimento = new DataTerceiraEra(1,1,1);
+        // status = Status.VIVO;
+        this(null, new DataTerceiraEra(1,1,1));
     }
     
     public void perdeVida(){
-       if(vida > 0){
+      //minha tentativa. Não deu certo pra fazer os testes. Não dizia
+        /** if(vida > 0){
            
             if(getNumeroSorte() < 0.0){
                experiencia = experiencia + 2;
@@ -33,21 +35,45 @@ public class Dwarves{
             }
         }else{
             status = Status.MORTO;
-        }      
+        }   */  
+        
+        boolean estaMorto = status.equals(Status.MORTO);
+        
+        if(estaMorto){
+            return;
+        }
+        
+        double numero = this.getNumeroSorte();
+        if(numero < 0){
+            this.experiencia += 2;
+        }
+        
+        if(numero > 100){
+            int vidaAposFlechada = this.vida - 10;
+            if(vidaAposFlechada == 0){
+                status = Status.MORTO;
+            }
+            
+            if(vida > 0){
+                vida = vidaAposFlechada;
+            }
+        }
+        
+   
     }
     
-    public int getVida(){
-        return vida;
-    }
+    public int getVida(){ return vida; }
     
-    public void setVida( int v){
-        vida = v;
-    }
+    public void setVida( int v){vida = v;}
     
-    public Status getStatus(){
-        return status;
-    }
+    public String getNome(){return this.nome;}
     
+    public int getExperiencia(){ return experiencia;}
+       
+    public Status getStatus(){ return status;}
+    
+    public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
+        
     public double getNumeroSorte(){
         double numeroSorte = 101.0;
         if(dataNascimento.ehBissexto() == true && vida >= 80 && vida <=90){
