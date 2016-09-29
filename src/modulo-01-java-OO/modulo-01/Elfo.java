@@ -59,6 +59,8 @@ public class Elfo {
         if(flecha.getQuantidade() > 1){
             atirarFlecha();
             anao.setVida(anao.getVida() - 10);
+            experiencia++;
+            anao.perdeVida();
         }
         
     }

@@ -118,6 +118,12 @@ public class ElfoTest{
         elfoDoTeste.atirarEmDwarves(anao);
         assertEquals(90,anao.getVida());
     }
+  
+    @Test
+    public void criarElfoInformandoZeroFlechas(){
+        Elfo elfoTeste = new Elfo("Zee", 0);
+        assertEquals(0, elfoTeste.getFlecha().getQuantidade());
+    }
     
     @Test
    public void elfoTesteToString(){
