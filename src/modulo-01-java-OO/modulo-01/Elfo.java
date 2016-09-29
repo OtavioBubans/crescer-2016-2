@@ -62,10 +62,10 @@ public class Elfo {
    // }
     
     public void atirarEmDwarves( Dwarves anao ){
-        if(flecha.getQuantidade() > 1){
+        if(flecha.getQuantidade() > 0){
             atirarFlecha();
             anao.setVida(anao.getVida() - 10);
-            experiencia += 1;
+            //experiencia ++;
             //anao.perdeVida();
         }
         
