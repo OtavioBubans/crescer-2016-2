@@ -4,6 +4,7 @@ public class Dwarves{
     private String nome;
     private int vida = 110;
     private DataTerceiraEra dataNascimento;
+    private int experiencia;
     
     //private double numeroSorte;
     
@@ -18,7 +19,15 @@ public class Dwarves{
     }
     
     public void perdeVida(){
-        vida -= 10;    
+       
+        if(getNumeroSorte() < 0.0){
+           experiencia = experiencia + 2;
+        }else if(getNumeroSorte() >= 0 && getNumeroSorte() <= 100){
+            
+        }else{
+            vida -= 10;
+        }
+            
     }
     
     public int getVida(){
@@ -27,7 +36,6 @@ public class Dwarves{
     
     public void setVida( int v){
         vida = v;
-        
     }
     
     public double getNumeroSorte(){
@@ -43,5 +51,8 @@ public class Dwarves{
         return numeroSorte;
         
     }
+    
+    
+    }
 
-}
+
