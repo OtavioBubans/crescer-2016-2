@@ -102,7 +102,18 @@ public class DwarvesTest
         dwarf.perdeVida();
         dwarf.perdeVida();
         
-        assertEquals(10, dwarf.getVida());
+        assertEquals(0, dwarf.getVida());
         
     }
+    
+    @Test
+    public void dwarfCriadoInformandoNomeENascimento() {
+        Dwarves gimli = new Dwarves("Gimli", new DataTerceiraEra(12, 11, 1900));
+        assertEquals("Gimli", gimli.getNome());
+        assertEquals(12, gimli.getDataNascimento().getDia());
+        assertEquals(11, gimli.getDataNascimento().getMes());
+        assertEquals(1900, gimli.getDataNascimento().getAno());
+    }
+    
+    
 }
