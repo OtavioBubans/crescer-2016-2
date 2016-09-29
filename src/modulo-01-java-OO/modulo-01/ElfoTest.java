@@ -160,17 +160,24 @@ public class ElfoTest{
         
     }
     
-    @Test
+   /** @Test
     public void criarElfoInformandoZeroFlechas() {
         Elfo elrond = new Elfo("Elrond", 0);
         assertEquals(0, elrond.getFlecha().getQuantidade());
-    }
+    }*/
     
      @Test
     public void criarElfoInformandoFlechasNegativas() {
         Elfo elrond = new Elfo("Elrond", -56);
         assertEquals(42, elrond.getFlecha().getQuantidade());
     }
+    
+   
+    @Test
+    public void elfoNasceVivo() { 
+        Elfo elfo = new Elfo("Zee"); 
+        assertEquals(Status.VIVO, elfo.getStatus()); 
+    } 
     
     
     

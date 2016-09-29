@@ -3,6 +3,7 @@ public class Elfo {
     private Item arco;
     private Item flecha;
     private int experiencia;
+    private Status status;
     
     public Elfo(String n) {
        /** nome = n;
@@ -18,6 +19,7 @@ public class Elfo {
         this.nome =  nome;
         arco = new Item("Arco", 1);
         flecha = new Item("Flechas", numFlechas >= 0 ? numFlechas : 42);
+        status = Status.VIVO;
         //experiencia = 0;
         
         
@@ -43,6 +45,10 @@ public class Elfo {
         return experiencia;
     }
     
+     public Status getStatus() { 
+        return status; 
+    }
+    
     public void atirarFlecha() {
         if(flecha.getQuantidade() >= 1){
             flecha.setQuantidade(flecha.getQuantidade() - 1);
@@ -59,8 +65,8 @@ public class Elfo {
         if(flecha.getQuantidade() > 1){
             atirarFlecha();
             anao.setVida(anao.getVida() - 10);
-            experiencia++;
-            anao.perdeVida();
+            experiencia += 1;
+            //anao.perdeVida();
         }
         
     }
