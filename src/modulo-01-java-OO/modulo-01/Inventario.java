@@ -4,11 +4,15 @@ import java.util.ArrayList;
 
 public class Inventario{
       
-    ArrayList<Item> itens = new ArrayList<>();
+    private ArrayList<Item> itens;
+    
+    public Inventario(){
+        itens = new ArrayList<>();
+    }
     
     
     public void adicionarItem(Item item){
-        itens.add(new Item());
+        itens.add(item);
     }
     
     public void removerItem(Item item){
@@ -19,7 +23,11 @@ public class Inventario{
                 return;
             }
         }
-        
+ 
+    }
+    
+    public int getTamanho(){
+        return this.itens.size();
     }
     
     
