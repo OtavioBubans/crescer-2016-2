@@ -5,6 +5,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 
 public class ElfoTest{
   
@@ -178,6 +180,17 @@ public class ElfoTest{
         Elfo elfo = new Elfo("Zee"); 
         assertEquals(Status.VIVO, elfo.getStatus()); 
     } 
+    
+    @Test
+    public void elfoNasceComArcoEFlechaInventario(){
+        ArrayList<Item> itens = new ArrayList<>();
+        
+        Elfo elfoTeste = new Elfo("Legolas");
+        itens = elfoTeste.getInventario().getItens();
+        
+        assertEquals(2,elfoTeste.getInventario().getTamanho());
+        
+    }
     
     
     

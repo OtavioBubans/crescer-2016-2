@@ -4,6 +4,7 @@ public class Elfo {
     private Item flecha;
     private int experiencia;
     private Status status;
+    private Inventario inventario;
     
     public Elfo(String n) {
        /** nome = n;
@@ -20,6 +21,9 @@ public class Elfo {
         arco = new Item("Arco", 1);
         flecha = new Item("Flechas", numFlechas >= 0 ? numFlechas : 42);
         status = Status.VIVO;
+        this.inventario = new Inventario();
+        inventario.adicionarItem(flecha);
+        inventario.adicionarItem(arco);
         //experiencia = 0;
         
         
@@ -47,6 +51,10 @@ public class Elfo {
     
      public Status getStatus() { 
         return status; 
+    }
+    
+    public Inventario getInventario(){
+        return inventario;
     }
     
     public void atirarFlecha() {
