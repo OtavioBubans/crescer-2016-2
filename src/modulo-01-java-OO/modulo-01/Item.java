@@ -22,6 +22,9 @@ public class Item {
     public String getDescricao() {
         return descricao;
     }
+    
+    public void tentarSorte(){
+    }
 }
 
 
