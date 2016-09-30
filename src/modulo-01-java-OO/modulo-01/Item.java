@@ -23,8 +23,16 @@ public class Item {
         return descricao;
     }
     
-    public void tentarSorte(){
+    public void ganhaMilUnidades(){
+        // usar metodo set do item
+        this.quantidade += 1000;
     }
+    
+    public void aumentarUnidades(int unidades) { 
+        quantidade += unidades; 
+    } 
+    
+    
 }
 
 

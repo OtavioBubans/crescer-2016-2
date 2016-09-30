@@ -22,6 +22,7 @@ public class Elfo {
         flecha = new Item("Flechas", numFlechas >= 0 ? numFlechas : 42);
         status = Status.VIVO;
         this.inventario = new Inventario();
+        
         inventario.adicionarItem(flecha);
         inventario.adicionarItem(arco);
         //experiencia = 0;

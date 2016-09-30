@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 
-public class Dwarves{
-     
+public class IrishDwarf{
+    
     private String nome;
     private int vida = 110;
     private DataTerceiraEra dataNascimento;
@@ -10,9 +9,7 @@ public class Dwarves{
     private Inventario inventario;
     
     
-    //private double numeroSorte;
-    
-    public Dwarves(String nome, DataTerceiraEra dataNascimento){
+    public IrishDwarf(String nome, DataTerceiraEra dataNascimento){
         this.nome=nome;
         this.dataNascimento = dataNascimento;
         this.status = Status.VIVO;
@@ -20,13 +17,13 @@ public class Dwarves{
         //vida=110;
     }
     
-    public Dwarves(){
+    public IrishDwarf(){
         //dataNascimento = new DataTerceiraEra(1,1,1);
         // status = Status.VIVO;
         this(null, new DataTerceiraEra(1,1,1));
     }
     
-    public void perdeVida(){
+     public void perdeVida(){
       //minha tentativa. Não deu certo pra fazer os testes. Não dizia
         /** if(vida > 0){
            
@@ -76,7 +73,16 @@ public class Dwarves{
     public Status getStatus(){ return status;}
     
     public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
+    
+    public void tentarSorte() { 
+        boolean temSorte = getNumeroSorte() == -3333; 
         
+        if (temSorte) { 
+            // aumenta 1000 unidades para todos itens do inventario 
+            inventario.aumentarUnidadesDosItensIrishDwarv(1000); 
+        } 
+    }
+    
     public double getNumeroSorte(){
         double numeroSorte = 101.0;
         if(dataNascimento.ehBissexto() == true && vida >= 80 && vida <=90){
@@ -91,7 +97,7 @@ public class Dwarves{
         
     }
     
-    public void adicionarItem(Item item){
+     public void adicionarItem(Item item){
         this.inventario.adicionarItem(item);
     }
     
@@ -104,16 +110,5 @@ public class Dwarves{
     }
     
     
-    public void tentarSorte(){
-        
-       // if(getNumeroSorte() == -3333.0){
-          //  inventario.getItens;
-            
-      // } 
-      boolean temSorte = getNumeroSorte() == -3333.0;
-    }
     
-    
-    }
-
-
+}

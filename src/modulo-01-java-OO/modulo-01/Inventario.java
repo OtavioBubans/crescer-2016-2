@@ -16,14 +16,15 @@ public class Inventario{
     }
     
     public void removerItem(Item item){
-        
-        for(int i = 0; i < itens.size(); i++){
-            if(item.equals(itens.get(i))){
-                itens.remove(i);
-                return;
-            }
-        }
- 
+        itens.remove(item);
+    }
+    
+     public ArrayList<Item> getItens(){
+        return this.itens;
+    }
+
+    public int getTamanho(){
+        return this.itens.size();
     }
     
     public String getDescricoesItens(){
@@ -40,15 +41,52 @@ public class Inventario{
         return itensInventario;
     }
     
-    
-    
-    public ArrayList getItens(){
-        return itens;
+    public void ordenarItens(){
+        
+        int maior = 0;
+        Item itemMaior;
+        Item itemMenor;
+        
+        ArrayList<Item> itensAux = new ArrayList<>();
+        
+        for(int i= 0; i < itens.size(); i++){
+            
+            for(int j = 1; j < itens.size()-1; j++){
+                
+                if(itens.get(i).getQuantidade() > itens.get(j).getQuantidade()){ 
+                    itemMaior = itens.get(i);
+                    itemMenor = itens.get(j);
+                 //   itensAux.adicionarItem(itemMenor);
+                 //   itensAux.adicionarItem(itemMaior);
+                }
+            }
+        }
+ 
     }
+    
+     public void aumentarUnidadesDosItens(int unidades) { 
+        for (Item item : itens) { 
+            item.aumentarUnidades(unidades); 
+        } 
+    } 
+    
+     public void aumentarUnidadesDosItensIrishDwarv(int unidades) { 
+        int somatorio = 0;
+        int unidade = unidades;
+        
+        while(unidades > 0){
+            somatorio += unidades;
+            unidade--;
+        }
 
-    public int getTamanho(){
-        return this.itens.size();
-    }
+         for (Item item : itens) { 
+            item.aumentarUnidades(unidades * somatorio); 
+        } 
+    } 
+    
+    //public void aumentaUnidadesDosItens(){
+        
+   // }
     
     
    /** public void rodar() {
