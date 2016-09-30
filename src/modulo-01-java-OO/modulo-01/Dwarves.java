@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Dwarves{
      
@@ -6,6 +7,8 @@ public class Dwarves{
     private DataTerceiraEra dataNascimento;
     private int experiencia;
     private Status status;
+    private Inventario inventario;
+    
     
     //private double numeroSorte;
     
@@ -13,6 +16,7 @@ public class Dwarves{
         this.nome=nome;
         this.dataNascimento = dataNascimento;
         this.status = Status.VIVO;
+        this.inventario = new Inventario();
         //vida=110;
     }
     
@@ -59,7 +63,6 @@ public class Dwarves{
             }
         }
         
-   
     }
     
     public int getVida(){ return vida; }
@@ -86,6 +89,18 @@ public class Dwarves{
         }
         return numeroSorte;
         
+    }
+    
+    public void adicionarItem(Item item){
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        inventario.removerItem(item);
+    }
+    
+    public Inventario getInventario(){
+        return inventario;
     }
     
     
