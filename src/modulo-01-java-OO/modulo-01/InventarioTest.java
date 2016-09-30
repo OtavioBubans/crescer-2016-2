@@ -102,6 +102,26 @@ public class InventarioTest{
         assertEquals(0, inventario.getTamanho());
     }
     
+    @Test
+    public void imprimiItens(){
+        
+        Inventario inventario = new Inventario();
+        Item item1 = new Item("Espada",4);
+        Item item2 = new Item("Escudo",4);
+        Item item3 = new Item("Machado",6);
+        Item item4 = new Item("Armadura",2);
+        Item item5 = new Item("Capa",25);
+        
+        inventario.adicionarItem(item1);
+        inventario.adicionarItem(item2);
+        inventario.adicionarItem(item3);
+        inventario.adicionarItem(item4);
+        inventario.adicionarItem(item5);
+        
+
+        assertEquals("Espada, Escudo, Machado, Armadura, Capa", inventario.getDescricoesItens());
+    }
+    
   
     
     

@@ -26,6 +26,22 @@ public class Inventario{
  
     }
     
+    public String getDescricoesItens(){
+        
+        String itensInventario = "";
+        
+        for(int i=0; i < itens.size(); i++ ){
+            itensInventario += itens.get(i).getDescricao();
+            if(i < itens.size() - 1){
+                itensInventario += ", ";
+            }
+        }
+        
+        return itensInventario;
+    }
+    
+    
+    
     public ArrayList getItens(){
         return itens;
     }
