@@ -183,16 +183,16 @@ public class ElfoTest{
     
     @Test
     public void elfoNasceComArcoEFlechaInventario(){
+        // Está dando uma mensagem diferente na hora de compilar 
+        // mas não aparece erro do java
+        // O programa compila normal
+        
         ArrayList<Item> itens = new ArrayList<>();
         
         Elfo elfoTeste = new Elfo("Legolas");
         itens = elfoTeste.getInventario().getItens();
-        
         assertEquals(2,elfoTeste.getInventario().getTamanho());
         
     }
     
-    
-    
-     
 }
