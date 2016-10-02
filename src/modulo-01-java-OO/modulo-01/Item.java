@@ -9,12 +9,11 @@ public class Item {
     
     //public Item(){
     //    this(null,0);
-    //}
-    
+    //} 
     public void setQuantidade(int novaQuantidade) {
         quantidade = novaQuantidade;
     }
-    
+     
     public int getQuantidade() {
         return quantidade;
     }
@@ -23,15 +22,8 @@ public class Item {
         return descricao;
     }
     
-    public void tentarSorte(){
+     public void aumentarUnidades(int unidades) {
+        quantidade += unidades;
     }
+    
 }
-
-
-
-
-
-
-
-
-

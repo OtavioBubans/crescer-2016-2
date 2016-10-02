@@ -13,7 +13,7 @@ public class DwarvesTest
     
     @Test
     public void dwarfNasce110Vida(){
-        
+
         Dwarves dwarf = new Dwarves();
         
         assertEquals(110, dwarf.getVida());  
@@ -39,9 +39,10 @@ public class DwarvesTest
         assertEquals(50, dwarf.getVida());
     }
     
-   // @Test
-   // public void dwarfNasceVivo(){
-   // }
+    @Test
+    public void dwarfNasceVivo(){
+         assertEquals(Status.VIVO, new Dwarves().getStatus());
+    }
     
     @Test
     public void dwarfRecebeUmFlechaFicaVivo(){
@@ -108,16 +109,7 @@ public class DwarvesTest
         
     }
     
-    @Test
-    public void dwarfCriadoInformandoNomeENascimento() {
-        Dwarves gimli = new Dwarves("Gimli", new DataTerceiraEra(12, 11, 1900));
-        assertEquals("Gimli", gimli.getNome());
-        assertEquals(12, gimli.getDataNascimento().getDia());
-        assertEquals(11, gimli.getDataNascimento().getMes());
-        assertEquals(1900, gimli.getDataNascimento().getAno());
-    }
-    
-    @Test
+     @Test
     public void dwarvesAddUmItem(){
         Dwarves lin = new Dwarves();
         Item item = new Item("Espada",4);
@@ -140,6 +132,90 @@ public class DwarvesTest
         assertEquals(1,lin.getInventario().getTamanho());
     }
     
+    @Test
+    public void dwarfCriadoInformandoNomeENascimento() {
+        Dwarves gimli = new Dwarves("Gimli", new DataTerceiraEra(12, 11, 1900));
+        assertEquals("Gimli", gimli.getNome());
+        assertEquals(12, gimli.getDataNascimento().getDia());
+        assertEquals(11, gimli.getDataNascimento().getMes());
+        assertEquals(1900, gimli.getDataNascimento().getAno());
+    }
+    
+    @Test
+    public void dwarfCriadoSemInformarNomeENascimento() {
+        Dwarves dwarv = new Dwarves();
+        assertNull(dwarv.getNome());
+        assertEquals(1, dwarv.getDataNascimento().getDia());
+        assertEquals(1, dwarv.getDataNascimento().getMes());
+        assertEquals(1, dwarv.getDataNascimento().getAno());
+    }
+    
+    
+      @Test
+    public void gerarNumeroAnoBissextoVidaEntre80e90() {
+        // Arrange
+        Dwarves bernardin = new Dwarves("Bernardin", new DataTerceiraEra(01, 01, 2016));
+        bernardin.perdeVida();
+        bernardin.perdeVida();
+        bernardin.perdeVida();
+        // Act
+        double resultado = bernardin.getNumeroSorte();
+        // Assert
+        assertEquals(-3333.0, resultado, .0);
+    }
+    
+     @Test
+    public void gerarNumeroAnoNaoBissextoNomeSeixas() {
+        // Arrange
+        Dwarves seixas = new Dwarves("Seixas", new DataTerceiraEra(01, 01, 2015));
+        // Act
+        double resultado = seixas.getNumeroSorte();
+        // Assert
+        assertEquals(33.0, resultado, .0);
+    }
+    
+      @Test
+    public void gerarNumeroAnoNaoBissextoNomeMeireles() {
+        // Arrange
+        Dwarves seixas = new Dwarves("Meireles", new DataTerceiraEra(01, 01, 2015));
+        // Act
+        double resultado = seixas.getNumeroSorte();
+        // Assert
+        assertEquals(33.0, resultado, .0);
+    }
+    
+    @Test
+    public void gerarNumeroSemEntrarNasCondicoes() {
+        // Arrange
+        Dwarves balin = new Dwarves("Balin", new DataTerceiraEra(1, 1, 2015));
+        // Act
+        double resultado = balin.getNumeroSorte();
+        // Assert
+        assertEquals(101.0, resultado, .0);
+    }
+    
+     @Test
+    public void dwarfPerderVidaComNumeroSorteNegativo() {
+        // Arrange
+        Dwarves dwarf = new Dwarves("Gimli", new DataTerceiraEra(1,1,2000));
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        // Act
+        dwarf.perdeVida();
+        // Assert
+        assertEquals(2, dwarf.getExperiencia());
+        assertEquals(90, dwarf.getVida(), .0);   
+    }
+    
+      @Test
+    public void dwarfPerderVidaComAnoNaoBissextoMeirelesNaoPerde() {
+        Dwarves meireles = new Dwarves("Meireles", new DataTerceiraEra(2, 3, 2015));
+        meireles.perdeVida();
+        assertEquals(0, meireles.getExperiencia());
+        assertEquals(110, meireles.getVida(), .0);
+    }
+    
+
     @Test
     public void removeItemRepetido(){
         //Rever teste, pois não garante que remove o item repetido

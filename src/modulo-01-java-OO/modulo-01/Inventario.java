@@ -10,6 +10,14 @@ public class Inventario{
         itens = new ArrayList<>();
     }
     
+    public ArrayList getItens(){
+        return itens;
+    }
+
+    public int getTamanho(){
+        return this.itens.size();
+    }
+    
     
     public void adicionarItem(Item item){
         itens.add(item);
@@ -17,12 +25,12 @@ public class Inventario{
     
     public void removerItem(Item item){
         
-        for(int i = 0; i < itens.size(); i++){
-            if(item.equals(itens.get(i))){
-                itens.remove(i);
-                return;
-            }
-        }
+        //for(int i = 0; i < itens.size(); i++){
+        //    if(item.equals(itens.get(i))){
+                itens.remove(item);
+        //        return;
+       //     }
+       // }
  
     }
     
@@ -40,16 +48,35 @@ public class Inventario{
         return itensInventario;
     }
     
-    
-    
-    public ArrayList getItens(){
-        return itens;
-    }
-
-    public int getTamanho(){
-        return this.itens.size();
+     public void aumentarUnidadesDosItens(int unidades) {
+        // Aumenta a unidade de cada item usando o for each
+        for (Item item : itens) {
+            item.aumentarUnidades(unidades);
+        }
     }
     
+     public Item getItemComMaiorQuantidade() {
+        // maiorAteAgora = 0
+        // percorro todos os itens verificando se existe alguém maior que o até agora
+        // caso existir, atualiza a variável
+        // retorna no final
+        int indice = 0, maiorQtdAteAgora = 0;
+        
+        for (int i = 0; i < itens.size(); i++) {
+            int qtdAtual = itens.get(i).getQuantidade();
+            if (qtdAtual > maiorQtdAteAgora) {
+                maiorQtdAteAgora = qtdAtual;
+                indice = i;
+            }
+        }
+        
+        boolean temItens = !itens.isEmpty();
+        
+        // pergunta se o array de itens é igual a 0
+        // se for igual a 0 retorna itens 0 
+        // caso contrario retorna null
+        return temItens ? itens.get(indice) : null;
+    }
     
    /** public void rodar() {
         ArrayList<Item> itens = new ArrayList<>();
