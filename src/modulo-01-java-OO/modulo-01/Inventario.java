@@ -10,13 +10,28 @@ public class Inventario{
         itens = new ArrayList<>();
     }
     
+    public ArrayList getItens(){
+        return itens;
+    }
+
+    public int getTamanho(){
+        return this.itens.size();
+    }
+    
     
     public void adicionarItem(Item item){
         itens.add(item);
     }
     
     public void removerItem(Item item){
-        itens.remove(item);
+        
+        for(int i = 0; i < itens.size(); i++){
+            if(item.equals(itens.get(i))){
+                itens.remove(i);
+                return;
+            }
+        }
+ 
     }
     
      public ArrayList<Item> getItens(){
@@ -41,29 +56,35 @@ public class Inventario{
         return itensInventario;
     }
     
-    public void ordenarItens(){
-        
-        int maior = 0;
-        Item itemMaior;
-        Item itemMenor;
-        
-        ArrayList<Item> itensAux = new ArrayList<>();
-        
-        for(int i= 0; i < itens.size(); i++){
-            
-            for(int j = 1; j < itens.size()-1; j++){
-                
-                if(itens.get(i).getQuantidade() > itens.get(j).getQuantidade()){ 
-                    itemMaior = itens.get(i);
-                    itemMenor = itens.get(j);
-                 //   itensAux.adicionarItem(itemMenor);
-                 //   itensAux.adicionarItem(itemMaior);
-                }
-            }
+     public void aumentarUnidadesDosItens(int unidades) {
+        // Aumenta a unidade de cada item usando o for each
+        for (Item item : itens) {
+            item.aumentarUnidades(unidades);
         }
- 
     }
     
+     public Item getItemComMaiorQuantidade() {
+        // maiorAteAgora = 0
+        // percorro todos os itens verificando se existe alguém maior que o até agora
+        // caso existir, atualiza a variável
+        // retorna no final
+        int indice = 0, maiorQtdAteAgora = 0;
+        
+        for (int i = 0; i < itens.size(); i++) {
+            int qtdAtual = itens.get(i).getQuantidade();
+            if (qtdAtual > maiorQtdAteAgora) {
+                maiorQtdAteAgora = qtdAtual;
+                indice = i;
+            }
+        }
+        
+        boolean temItens = !itens.isEmpty();
+        
+        // pergunta se o array de itens é igual a 0
+        // se for igual a 0 retorna itens 0 
+        // caso contrario retorna null
+        return temItens ? itens.get(indice) : null;
+    }
      public void aumentarUnidadesDosItens(int unidades) { 
         for (Item item : itens) { 
             item.aumentarUnidades(unidades); 
@@ -83,10 +104,6 @@ public class Inventario{
             item.aumentarUnidades(unidades * somatorio); 
         } 
     } 
-    
-    //public void aumentaUnidadesDosItens(){
-        
-   // }
     
     
    /** public void rodar() {

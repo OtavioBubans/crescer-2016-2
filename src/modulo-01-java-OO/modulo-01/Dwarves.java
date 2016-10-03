@@ -4,8 +4,8 @@ public class Dwarves{
      
     private String nome;
     private int vida = 110;
-    private DataTerceiraEra dataNascimento;
     private int experiencia;
+    private DataTerceiraEra dataNascimento;
     private Status status;
     private Inventario inventario;
     
@@ -76,6 +76,9 @@ public class Dwarves{
     public Status getStatus(){ return status;}
     
     public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
+    
+    public Inventario getInventario(){return inventario;}
+    
         
     public double getNumeroSorte(){
         double numeroSorte = 101.0;
@@ -99,10 +102,14 @@ public class Dwarves{
         this.inventario.removerItem(item);
     }
     
-    public Inventario getInventario(){
-        return inventario;
-    }
     
+    public void tentarSorte() {
+        boolean temSorte = getNumeroSorte() == -3333;
+        if (temSorte) {
+            // aumenta 1000 unidades para todos itens do inventario
+            inventario.aumentarUnidadesDosItens(1000);
+        }
+    }
     
     public void tentarSorte(){
         
