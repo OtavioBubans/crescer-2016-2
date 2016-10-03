@@ -1,19 +1,21 @@
 
-public class IrishDwarf{
+public class IrishDwarf extends Dwarves{
     
-    private String nome;
-    private int vida = 110;
-    private DataTerceiraEra dataNascimento;
-    private int experiencia;
-    private Status status;
-    private Inventario inventario;
+    //private String nome;
+   // private int vida = 110;
+   // private DataTerceiraEra dataNascimento;
+   // private int experiencia;
+   // private Status status;
+    //private Inventario inventario;
     
     
     public IrishDwarf(String nome, DataTerceiraEra dataNascimento){
-        this.nome=nome;
-        this.dataNascimento = dataNascimento;
-        this.status = Status.VIVO;
-        this.inventario = new Inventario();
+        super(nome,dataNascimento);
+        
+        //this.nome=nome;
+        //this.dataNascimento = dataNascimento;
+        //this.status = Status.VIVO;
+        //this.inventario = new Inventario();
         //vida=110;
     }
     
@@ -62,17 +64,17 @@ public class IrishDwarf{
         
     }
     
-    public int getVida(){ return vida; }
+   // public int getVida(){ return vida; }
     
-    public void setVida( int v){vida = v;}
+   // public void setVida( int v){vida = v;}
     
-    public String getNome(){return this.nome;}
+   // public String getNome(){return this.nome;}
     
-    public int getExperiencia(){ return experiencia;}
+   // public int getExperiencia(){ return experiencia;}
        
-    public Status getStatus(){ return status;}
+   // public Status getStatus(){ return status;}
     
-    public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
+   // public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
     
     public void tentarSorte() { 
         boolean temSorte = getNumeroSorte() == -3333; 
@@ -82,33 +84,5 @@ public class IrishDwarf{
             inventario.aumentarUnidadesDosItensIrishDwarv(1000); 
         } 
     }
-    
-    public double getNumeroSorte(){
-        double numeroSorte = 101.0;
-        if(dataNascimento.ehBissexto() == true && vida >= 80 && vida <=90){
-            numeroSorte = numeroSorte * -33;
-        }
         
-        if(dataNascimento.ehBissexto() == false && nome == "Seixas" || nome == "Meireles"){
-           numeroSorte = numeroSorte * 33;
-           numeroSorte = numeroSorte % 100;
-        }
-        return numeroSorte;
-        
-    }
-    
-     public void adicionarItem(Item item){
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item){
-        this.inventario.removerItem(item);
-    }
-    
-    public Inventario getInventario(){
-        return inventario;
-    }
-    
-    
-    
 }

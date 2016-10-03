@@ -10,9 +10,9 @@ public class Inventario{
         itens = new ArrayList<>();
     }
     
-    public ArrayList getItens(){
-        return itens;
-    }
+    //public ArrayList getItens(){
+    //    return itens;
+    //}
 
     public int getTamanho(){
         return this.itens.size();
@@ -38,9 +38,7 @@ public class Inventario{
         return this.itens;
     }
 
-    public int getTamanho(){
-        return this.itens.size();
-    }
+   
     
     public String getDescricoesItens(){
         
@@ -85,19 +83,14 @@ public class Inventario{
         // caso contrario retorna null
         return temItens ? itens.get(indice) : null;
     }
-     public void aumentarUnidadesDosItens(int unidades) { 
-        for (Item item : itens) { 
-            item.aumentarUnidades(unidades); 
-        } 
-    } 
-    
+     
      public void aumentarUnidadesDosItensIrishDwarv(int unidades) { 
         int somatorio = 0;
-        int unidade = unidades;
+       // int unidade = unidades;
         
         while(unidades > 0){
             somatorio += unidades;
-            unidade--;
+            unidades--;
         }
 
          for (Item item : itens) { 

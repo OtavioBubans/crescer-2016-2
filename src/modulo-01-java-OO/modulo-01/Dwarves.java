@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 
-public class Dwarves{
-     
-    private String nome;
-    private int vida = 110;
-    private int experiencia;
+public class Dwarves extends Personagem{     
+  //  private String nome;
+    protected int vida = 110;
+    //private int experiencia;
     private DataTerceiraEra dataNascimento;
-    private Status status;
-    private Inventario inventario;
+   // private Status status;
+    
     
     
     //private double numeroSorte;
     
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
-        this.nome=nome;
+        
+        super(nome);
+        //this.nome=nome;
         this.dataNascimento = dataNascimento;
-        this.status = Status.VIVO;
-        this.inventario = new Inventario();
+       // this.status = Status.VIVO;
+       // this.inventario = new Inventario();
         //vida=110;
     }
     
@@ -69,11 +70,11 @@ public class Dwarves{
     
     public void setVida( int v){vida = v;}
     
-    public String getNome(){return this.nome;}
+   // public String getNome(){return this.nome;}
     
-    public int getExperiencia(){ return experiencia;}
+
        
-    public Status getStatus(){ return status;}
+    
     
     public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
     
@@ -109,15 +110,6 @@ public class Dwarves{
             // aumenta 1000 unidades para todos itens do inventario
             inventario.aumentarUnidadesDosItens(1000);
         }
-    }
-    
-    public void tentarSorte(){
-        
-       // if(getNumeroSorte() == -3333.0){
-          //  inventario.getItens;
-            
-      // } 
-      boolean temSorte = getNumeroSorte() == -3333.0;
     }
     
     

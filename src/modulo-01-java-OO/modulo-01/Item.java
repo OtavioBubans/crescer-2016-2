@@ -25,6 +25,7 @@ public class Item {
     public void ganhaMilUnidades(){
         // usar metodo set do item
         this.quantidade += 1000;
+    }
      public void aumentarUnidades(int unidades) {
         quantidade += unidades;
     }
