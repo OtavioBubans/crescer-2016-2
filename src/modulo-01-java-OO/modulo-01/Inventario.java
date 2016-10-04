@@ -18,28 +18,26 @@ public class Inventario{
         return this.itens.size();
     }
     
-    
+     public ArrayList<Item> getItens(){
+        return this.itens;
+    }
+
     public void adicionarItem(Item item){
         itens.add(item);
     }
     
     public void removerItem(Item item){
         
-        for(int i = 0; i < itens.size(); i++){
-            if(item.equals(itens.get(i))){
-                itens.remove(i);
-                return;
-            }
-        }
+       // for(int i = 0; i < itens.size(); i++){
+       //     if(item.equals(itens.get(i))){
+                itens.remove(item);
+       //         return;
+       //     }
+       // }
  
     }
     
-     public ArrayList<Item> getItens(){
-        return this.itens;
-    }
 
-   
-    
     public String getDescricoesItens(){
         
         String itensInventario = "";
@@ -60,6 +58,12 @@ public class Inventario{
             item.aumentarUnidades(unidades);
         }
     }
+    
+    public void aumentarUnidadesProporcionalQuantidadePorItem() {
+        for (Item item : this.itens) {
+            item.aumentarProporcionalQuantidade();
+        }
+    } 
     
      public Item getItemComMaiorQuantidade() {
         // maiorAteAgora = 0
@@ -97,6 +101,55 @@ public class Inventario{
             item.aumentarUnidades(unidades * somatorio); 
         } 
     } 
+    
+     public void ordenarItens() {
+        ordenarItens(TipoOrdenacao.ASCENDENTE);
+    }
+    
+    public void ordenarItens(TipoOrdenacao tipoOrdenacao) {
+        // Versão mais estável do Bubblesort - Melhor caso O(n), Pior caso O(n^2)
+        // homenagem ao do-while: para forçar entrada na lógica
+        boolean posicoesSendoTrocadas;
+        boolean ascendente = tipoOrdenacao == TipoOrdenacao.ASCENDENTE;
+        do {
+            posicoesSendoTrocadas = false;
+            for (int j = 0; j < this.itens.size() - 1; j++) {
+                Item itemAtual = this.itens.get(j);
+                Item proximo = this.itens.get(j + 1);
+
+                boolean precisaTrocar = 
+                    ascendente ? itemAtual.getQuantidade() > proximo.getQuantidade() : itemAtual.getQuantidade() < proximo.getQuantidade();
+
+                if (precisaTrocar) {
+                    this.itens.set(j, proximo);
+                    this.itens.set(j + 1, itemAtual);
+                    posicoesSendoTrocadas = true;
+                }
+            }
+        } while (posicoesSendoTrocadas);
+
+    }
+    
+    
+    /**
+     * 
+     public void ordenarItens () {
+        
+        int min = 0;
+            for (int i = 0; i < itens.size(); i++) {
+                min = i; // mínimo inicial
+                for (int j = i+1; j < itens.size(); j++){
+                    if (itens.get(j).getQuantidade() < itens.get(min).getQuantidade()){
+                        min = j; // acha o novo mínimo
+                    }
+                int novoMin = itens.get(i).getQuantidade(); // coloca o novo mínimo (min)
+                //a[i] = a[min]; // na posição correta (i)
+                itens.set(itens.get(i),itens.get(min));
+                //a[min] = T;
+                itens.set(min,novoMin);
+               }
+        }
+    }*/
     
     
    /** public void rodar() {

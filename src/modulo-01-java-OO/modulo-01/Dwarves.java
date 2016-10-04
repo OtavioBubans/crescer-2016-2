@@ -1,15 +1,10 @@
 import java.util.ArrayList;
 
 public class Dwarves extends Personagem{     
-  //  private String nome;
+    
     protected int vida = 110;
-    //private int experiencia;
     private DataTerceiraEra dataNascimento;
-   // private Status status;
-    
-    
-    
-    //private double numeroSorte;
+   
     
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
         
@@ -69,12 +64,6 @@ public class Dwarves extends Personagem{
     public int getVida(){ return vida; }
     
     public void setVida( int v){vida = v;}
-    
-   // public String getNome(){return this.nome;}
-    
-
-       
-    
     
     public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
     

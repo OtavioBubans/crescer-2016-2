@@ -19,6 +19,11 @@ public class DwarvesTest
         assertEquals(110, dwarf.getVida());  
     }
     
+     @Test
+    public void dwarfNasceVivo(){
+         assertEquals(Status.VIVO, new Dwarves().getStatus());
+    }
+    
     @Test
     public void perdeVidaUmaVez(){
         Dwarves dwarf = new Dwarves();
@@ -40,16 +45,9 @@ public class DwarvesTest
     }
     
     @Test
-    public void dwarfNasceVivo(){
-         assertEquals(Status.VIVO, new Dwarves().getStatus());
-    }
-    
-    @Test
     public void dwarfRecebeUmFlechaFicaVivo(){
         Dwarves dwarf = new Dwarves();
-        
-        dwarf.perdeVida();
-        
+        dwarf.perdeVida(); 
         assertEquals(Status.VIVO, dwarf.getStatus());
     }
     
@@ -67,8 +65,7 @@ public class DwarvesTest
         
     }
     
-    
-    
+        
      @Test
     public void dwarfLeva11FlechasFicaMorre(){
         Dwarves dwarf = new Dwarves();     
