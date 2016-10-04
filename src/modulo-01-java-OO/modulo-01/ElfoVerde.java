@@ -5,7 +5,7 @@ public class ElfoVerde extends Elfo{
     //    "Arco e Flecha de Vidro"
     
     public ElfoVerde(String nome){
-        this(nome,1);
+        this(nome,42);
         
         
     }
@@ -21,6 +21,8 @@ public class ElfoVerde extends Elfo{
     public void atirarFlecha(){
         super.atirarFlecha();
         experiencia++;
+        
+        this.vida = (int)(vida * 5) / 100;
        
     }
     
