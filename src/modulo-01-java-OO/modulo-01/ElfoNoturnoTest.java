@@ -11,13 +11,34 @@ public class ElfoNoturnoTest{
     
    @Test 
     public void experienciaEmTriplo(){
-    ElfoNoturno elfo = new ElfoNoturno("Otavio");
+        ElfoNoturno elfo = new ElfoNoturno("Otavio");
        
-    elfo.atirarFlecha();
-    elfo.atirarFlecha();
-        
-       
-    assertEquals(6, elfo.getExperiencia());
+        elfo.atirarFlecha();
+        elfo.atirarFlecha();
+
+        assertEquals(6, elfo.getExperiencia());
    }
+   
+   @Test
+   public void testaVida(){
+        ElfoNoturno elfo = new ElfoNoturno("Otavio");
+        
+        elfo.atirarFlecha();
+        
+        assertEquals(95,elfo.getVida());
+       
+    }
+    
+    @Test
+   public void atira2FlechasEPerdeVida(){
+        ElfoNoturno elfo = new ElfoNoturno("Otavio");
+        
+        elfo.atirarFlecha(); 
+        elfo.atirarFlecha();
+        
+        assertEquals(90,elfo.getVida());
+       
+    }
+    
 
 }

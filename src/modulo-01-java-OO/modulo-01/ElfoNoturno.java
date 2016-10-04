@@ -8,6 +8,8 @@ public class ElfoNoturno extends Elfo{
     public void atirarFlecha(){
         super.atirarFlecha();
         experiencia += 2;
+        
+        this.vida -= (double)vida * 0.05;
     }
  
 }

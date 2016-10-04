@@ -20,9 +20,7 @@ public class ElfoVerde extends Elfo{
     
     public void atirarFlecha(){
         super.atirarFlecha();
-        experiencia++;
-        
-        this.vida = (int)(vida * 5) / 100;
+        experiencia++;       
        
     }
     
