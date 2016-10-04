@@ -25,4 +25,10 @@ public class ElfoVerdeTest{
         assertEquals("Espada de aço valiriano", elfo.getInventario().getItens().get(0).getDescricao());
         assertEquals("Arco e Flecha de Vidro", elfo.getInventario().getItens().get(1).getDescricao());
     }
+    
+    @Test
+    public void nasceCom100DeVida(){
+        ElfoVerde elfo = new ElfoVerde("Otavio");
+        assertEquals(100, elfo.getVida());
+    }
 }

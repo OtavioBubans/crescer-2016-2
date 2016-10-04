@@ -195,4 +195,10 @@ public class ElfoTest{
         
     }
     
+    @Test
+    public void nasceCom100DeVida(){
+        Elfo elfo = new Elfo("Otavio");
+        assertEquals(100, elfo.getVida());
+    }
+    
 }

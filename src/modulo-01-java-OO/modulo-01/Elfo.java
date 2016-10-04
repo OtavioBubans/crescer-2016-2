@@ -1,10 +1,6 @@
 public class Elfo extends Personagem {
-
-   // private Item arco;
-   // private Item flecha;
-
-   
-   // private Inventario inventario;
+    
+    protected int vida;
     
     public Elfo(String n) {
        /** nome = n;
@@ -26,13 +22,13 @@ public class Elfo extends Personagem {
        //inventario.adicionarItem(flecha);
        //inventario.adicionarItem(arco);
         //experiencia = 0;
+        vida = 100;
         this.inventario.adicionarItem(new Item("Arco", 1));
         this.inventario.adicionarItem(new Item("Flechas", numFlechas >= 0 ? numFlechas : 42));
         
     }
     
    
-    
     public Item getArco(){
         return this.inventario.getItens().get(0);
     }
@@ -40,10 +36,22 @@ public class Elfo extends Personagem {
     public Item getFlecha(){
         return this.inventario.getItens().get(1);
     }
-
-   // public Inventario getInventario(){
-  //      return inventario;
-    //}
+    
+    public Inventario getInventario(){
+        return inventario;
+    }
+    
+    public int getVida(){
+        return this.vida;
+    }
+    
+    public void adicionarItem(Item  item){
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void removerItem(Item item){
+        this.inventario.removerItem(item);
+    }
     
     public void atirarFlecha() {
         if(getFlecha().getQuantidade() >= 1){
@@ -90,12 +98,3 @@ public class Elfo extends Personagem {
     
     
 }
-
-
-
-
-
-
-
-
-
