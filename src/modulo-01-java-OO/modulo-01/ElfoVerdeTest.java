@@ -31,4 +31,26 @@ public class ElfoVerdeTest{
         ElfoVerde elfo = new ElfoVerde("Otavio");
         assertEquals(100, elfo.getVida());
     }
+    
+    @Test
+    public void experienciaEmDobro(){
+        
+        ElfoVerde elfo = new ElfoVerde("Otavio", 3);
+       
+        elfo.atirarFlecha();
+        elfo.atirarFlecha();
+        elfo.atirarFlecha();
+       
+        assertEquals(6, elfo.getExperiencia());
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

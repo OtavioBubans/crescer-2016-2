@@ -64,9 +64,9 @@ public class Elfo extends Personagem {
     public void atirarEmDwarves( Dwarves anao ){
         if(getFlecha().getQuantidade() > 0){
             atirarFlecha();
-            anao.setVida(anao.getVida() - 10);
+            //anao.setVida(anao.getVida() - 10);
             //experiencia ++;
-            //anao.perdeVida();
+            anao.perdeVida();
         }
         
     }
