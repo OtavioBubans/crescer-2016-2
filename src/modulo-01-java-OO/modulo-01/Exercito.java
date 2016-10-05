@@ -13,9 +13,7 @@ public class Exercito{
        
         if(elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde){
             exercito.add(elfo);
-        }
-        
-
+        }       
     }
     
     public ArrayList<Elfo> getExercito(){
@@ -35,6 +33,20 @@ public class Exercito{
            }
         }
         return null;
+    }
+    
+    public ArrayList<Elfo> buscar(Status status){
+        
+        ArrayList<Elfo> elfos = new ArrayList<>();
+        
+        for(int i=0; i < getTamanho(); i++){
+            if(status == getExercito().get(i).getStatus()){
+                elfos.add(getExercito().get(i));
+            }
+            
+        }
+        
+        return elfos;
     }
     
    

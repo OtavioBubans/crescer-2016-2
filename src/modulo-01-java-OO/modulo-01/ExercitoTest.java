@@ -88,6 +88,65 @@ public class ExercitoTest{
         assertEquals(null,nomeBuscado);
     }
     
+    @Test
+    public void testaBuscaMorto(){
+        
+        Exercito exercito = new Exercito();
+        
+        ArrayList<Elfo> elfos = new ArrayList<>();
+        
+        exercito.alistarElfo(new ElfoNoturno("Otavio",10)); //
+        exercito.alistarElfo(new ElfoVerde("Legolas",20));
+        exercito.alistarElfo(new ElfoVerde("Gwart", 30)); //
+        exercito.alistarElfo(new ElfoNoturno("Bit", 40));
+        exercito.alistarElfo(new ElfoVerde("Bee",50)); //
+        exercito.alistarElfo(new ElfoVerde("Zua",60));
+        
+        Status status = Status.MORTO;
+        
+        exercito.getExercito().get(0).setStatus(status);
+        exercito.getExercito().get(3).setStatus(status);
+        exercito.getExercito().get(5).setStatus(status);
+        
+        elfos = exercito.buscar(status);
+        
+        assertEquals(3,elfos.size());
+        
+        assertEquals(Status.MORTO, elfos.get(0).getStatus()); 
+        assertEquals(Status.MORTO, elfos.get(1).getStatus());
+        assertEquals(Status.MORTO, elfos.get(2).getStatus());
+
+    }
+    
+    @Test
+    public void testaBuscaVivo(){
+        
+        Exercito exercito = new Exercito();
+        
+        ArrayList<Elfo> elfos = new ArrayList<>();
+        
+        exercito.alistarElfo(new ElfoNoturno("Otavio",10)); //
+        exercito.alistarElfo(new ElfoVerde("Legolas",20));
+        exercito.alistarElfo(new ElfoVerde("Gwart", 30)); //
+        exercito.alistarElfo(new ElfoNoturno("Bit", 40));
+        exercito.alistarElfo(new ElfoVerde("Bee",50)); //
+        exercito.alistarElfo(new ElfoVerde("Zua",60));
+        
+        Status status = Status.VIVO;
+          
+        elfos = exercito.buscar(status);
+        
+        assertEquals(6,elfos.size());
+        
+        assertEquals(Status.VIVO, elfos.get(0).getStatus()); 
+        assertEquals(Status.VIVO, elfos.get(1).getStatus());
+        assertEquals(Status.VIVO, elfos.get(2).getStatus());
+        assertEquals(Status.VIVO, elfos.get(3).getStatus()); 
+        assertEquals(Status.VIVO, elfos.get(4).getStatus());
+        assertEquals(Status.VIVO, elfos.get(5).getStatus());
+
+    }
+    
     
   
     

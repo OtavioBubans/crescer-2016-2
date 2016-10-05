@@ -34,6 +34,10 @@ public abstract class Personagem{
         return status;
     }
     
+    public void setStatus(Status status){
+       this.status = status;
+    }
+    
     public int getVida(){
         return this.vida;
     }
