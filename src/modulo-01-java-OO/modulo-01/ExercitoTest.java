@@ -8,7 +8,23 @@ import java.util.ArrayList;
 public class ExercitoTest{
     
     
-      @Test
+    @Test
+    public void alistaElfosNormais(){
+        
+        Exercito exercito = new Exercito();
+        Elfo elfoNormal = new Elfo("Otávio");
+        
+        exercito.alistarElfo(elfoNormal); 
+        assertEquals(0,exercito.getTamanho());
+        
+        Elfo elfoNovo = new ElfoVerde("Otávio");
+        exercito.alistarElfo(elfoNovo);
+        
+        assertEquals(1,exercito.getTamanho());
+        
+    }
+    
+    @Test
     public void alistaUmElfoNoturno(){
         Exercito exercito = new Exercito();
         ElfoNoturno elfoNoturno = new ElfoNoturno("Jaule",60);
@@ -61,15 +77,17 @@ public class ExercitoTest{
         Exercito exercito = new Exercito();
         
         exercito.alistarElfo(new ElfoVerde("Otavio",10));
-        exercito.alistarElfo(new ElfoVerde("Legolas",20));
+        exercito.alistarElfo(new ElfoVerde("Legolas",20)); 
         exercito.alistarElfo(new ElfoVerde("Gwart", 30));
-        exercito.alistarElfo(new ElfoVerde("Bit", 40));
+        
+        ElfoVerde elfoVerde = new ElfoVerde("Bit", 40);
+        exercito.alistarElfo(elfoVerde);
         exercito.alistarElfo(new ElfoVerde("Bee",50));
         exercito.alistarElfo(new ElfoVerde("Zua",60));
         
-        String nomeBuscado = exercito.buscarElfoPeloNome("Bit");
+        Elfo nomeBuscado = exercito.buscarElfoPeloNome(elfoVerde.getNome());
         
-        assertEquals("Bit",nomeBuscado);
+        assertEquals("Bit",nomeBuscado.getNome());
     }
     
     @Test
@@ -83,7 +101,7 @@ public class ExercitoTest{
         exercito.alistarElfo(new ElfoVerde("Bee",50));
         exercito.alistarElfo(new ElfoVerde("Zua",60));
         
-        String nomeBuscado = exercito.buscarElfoPeloNome("Batman");
+        Elfo nomeBuscado = exercito.buscarElfoPeloNome("Batman");
         
         assertEquals(null,nomeBuscado);
     }

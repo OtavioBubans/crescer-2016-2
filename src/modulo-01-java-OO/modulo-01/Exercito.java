@@ -24,12 +24,12 @@ public class Exercito{
         return exercito.size();
     }
     
-    public String buscarElfoPeloNome(String nome){
+    public Elfo buscarElfoPeloNome(String nome){
         
         for(int i = 0; i < getTamanho(); i++){ 
            boolean achou = nome.equals(exercito.get(i).getNome());
             if(achou){
-               return nome;
+               return exercito.get(i);
            }
         }
         return null;
