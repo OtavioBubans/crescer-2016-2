@@ -4,6 +4,7 @@ public abstract class Personagem{
     protected Inventario inventario;
     protected Status status;
     protected int experiencia;
+    protected int vida;
     
     
     public Personagem(String nome){
@@ -32,5 +33,19 @@ public abstract class Personagem{
     public Status getStatus(){ 
         return status;
     }
+    
+    public int getVida(){
+        return this.vida;
+    }
+    
+      public void adicionarItem(Item item){
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        this.inventario.removerItem(item);
+    }
+    
+    
     
 }
