@@ -164,12 +164,5 @@ public class ExercitoTest{
         assertEquals(Status.VIVO, elfos.get(5).getStatus());
 
     }
-    
-    
-  
-    
-  
 
-
-   
 }

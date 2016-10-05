@@ -1,4 +1,11 @@
 public class Elfo extends Personagem {
+    
+    private static int contadorDeElfos;
+    
+    public static int getContador(){
+        return Elfo.contadorDeElfos;
+    }
+    
 
     public Elfo(String n) {
        /** nome = n;
@@ -22,6 +29,7 @@ public class Elfo extends Personagem {
         //experiencia = 0;
         this.vida = 100;
         this.inicializarInventario(numFlechas);
+        Elfo.contadorDeElfos++;
     }
     
     protected void inicializarInventario(int quantidadeFlechas) {

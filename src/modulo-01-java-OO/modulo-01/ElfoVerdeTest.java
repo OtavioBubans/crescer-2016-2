@@ -44,13 +44,6 @@ public class ElfoVerdeTest{
         assertEquals(6, elfo.getExperiencia());
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
+      
 }

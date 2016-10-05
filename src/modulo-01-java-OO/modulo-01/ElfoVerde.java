@@ -17,6 +17,7 @@ public class ElfoVerde extends Elfo{
         //this.inventario.adicionarItem(new Item("Espada de aço valiriano",1));
         //this.inventario.adicionarItem(new Item("Arco e Flecha de Vidro",numFlechas));
        // super(nome, quantidadeFlecha);
+       
      }
     
     @Override
