@@ -15,7 +15,7 @@ public class ExercitoTest{
         Elfo elfoNormal = new Elfo("Otávio");
         
         exercito.alistarElfo(elfoNormal); 
-        assertEquals(0,exercito.getTamanho());
+        assertEquals(0, exercito.getTamanho());
         
         Elfo elfoNovo = new ElfoVerde("Otávio");
         exercito.alistarElfo(elfoNovo);
