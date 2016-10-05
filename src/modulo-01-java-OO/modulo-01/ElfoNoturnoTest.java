@@ -13,8 +13,8 @@ public class ElfoNoturnoTest{
     public void experienciaEmTriplo(){
         ElfoNoturno elfo = new ElfoNoturno("Otavio");
        
-        elfo.atirarFlecha();
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarves());
+        elfo.atirarFlecha(new Dwarves());
 
         assertEquals(6, elfo.getExperiencia());
    }
@@ -23,7 +23,7 @@ public class ElfoNoturnoTest{
    public void testaVida(){
         ElfoNoturno elfo = new ElfoNoturno("Otavio");
         
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarves());
         
         assertEquals(95,elfo.getVida());
        
@@ -33,8 +33,8 @@ public class ElfoNoturnoTest{
    public void atira2FlechasEPerdeVida(){
         ElfoNoturno elfo = new ElfoNoturno("Otavio");
         
-        elfo.atirarFlecha(); 
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarves()); 
+        elfo.atirarFlecha(new Dwarves());
         
         assertEquals(90,elfo.getVida());
        

@@ -5,7 +5,7 @@ public abstract class Personagem{
     protected Status status;
     protected int experiencia;
     protected int vida;
-    
+        
     
     public Personagem(String nome){
         this.nome = nome;
@@ -46,6 +46,7 @@ public abstract class Personagem{
         this.inventario.removerItem(item);
     }
     
-    
-    
+    abstract void inicializarInventario(int quantidadeFlechas);
+
+ 
 }

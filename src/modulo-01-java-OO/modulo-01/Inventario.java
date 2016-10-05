@@ -10,10 +10,6 @@ public class Inventario{
         itens = new ArrayList<>();
     }
     
-    //public ArrayList getItens(){
-    //    return itens;
-    //}
-
     public int getTamanho(){
         return this.itens.size();
     }

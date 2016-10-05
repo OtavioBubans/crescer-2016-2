@@ -22,8 +22,8 @@ public class ElfoVerdeTest{
     @Test
     public void testaElfoVerdeComItens(){
         ElfoVerde  elfo = new ElfoVerde("Otavio");
-        assertEquals("Espada de aço valiriano", elfo.getInventario().getItens().get(0).getDescricao());
-        assertEquals("Arco e Flecha de Vidro", elfo.getInventario().getItens().get(1).getDescricao());
+        assertEquals("Arco de Vidro", elfo.getInventario().getItens().get(0).getDescricao());
+        assertEquals("Flecha de Vidro", elfo.getInventario().getItens().get(1).getDescricao());
     }
     
     @Test
@@ -37,9 +37,9 @@ public class ElfoVerdeTest{
         
         ElfoVerde elfo = new ElfoVerde("Otavio", 3);
        
-        elfo.atirarFlecha();
-        elfo.atirarFlecha();
-        elfo.atirarFlecha();
+        elfo.atirarFlecha(new Dwarves());
+        elfo.atirarFlecha(new Dwarves());
+        elfo.atirarFlecha(new Dwarves());
        
         assertEquals(6, elfo.getExperiencia());
         

@@ -41,13 +41,13 @@ public class ElfoTest{
         //Arrange
         Elfo elfoDoTeste = new Elfo("Legolas");
         //Act
-        elfoDoTeste.atirarFlecha();
+        elfoDoTeste.atirarFlecha(new Dwarves());
         //Assert
         assertEquals(41, elfoDoTeste.getFlecha().getQuantidade());
         assertEquals(1, elfoDoTeste.getExperiencia());
     }
      
-    @Test
+   /** @Test
     public void atiraFlechaEmDwarves (){
         //Arrange
         Elfo elfoDoTeste = new Elfo("Legolas");
@@ -56,16 +56,17 @@ public class ElfoTest{
         //Assert
         assertEquals(41, elfoDoTeste.getFlecha().getQuantidade());
         assertEquals(1, elfoDoTeste.getExperiencia());
-    }
+    }*/
     
    //atirarEmDwarves
-    @Test
+    
+   @Test
     public void atiraDuasFlechas (){
         //Arrange
         Elfo elfoDoTeste = new Elfo("Legolas");
         //Act
-        elfoDoTeste.atirarFlecha();
-        elfoDoTeste.atirarFlecha();
+        elfoDoTeste.atirarFlecha(new Dwarves());
+        elfoDoTeste.atirarFlecha(new Dwarves());
         //Assert
         assertEquals(40, elfoDoTeste.getFlecha().getQuantidade());
         assertEquals(2, elfoDoTeste.getExperiencia());
@@ -85,7 +86,7 @@ public class ElfoTest{
         Elfo elfoDoTeste = new Elfo("Legolas");
         
         while( elfoDoTeste.getFlecha().getQuantidade() != 0){
-            elfoDoTeste.atirarFlecha();
+            elfoDoTeste.atirarFlecha(new Dwarves());
         }  
         assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());        
     }
@@ -96,10 +97,10 @@ public class ElfoTest{
         Elfo elfoDoTeste = new Elfo("Legolas");
          
         while( elfoDoTeste.getFlecha().getQuantidade() != 0){
-            elfoDoTeste.atirarFlecha();
+            elfoDoTeste.atirarFlecha(new Dwarves());
         } 
         
-        elfoDoTeste.atirarFlecha(); // Aqui simula a tentativa 
+        elfoDoTeste.atirarFlecha(new Dwarves()); // Aqui simula a tentativa 
                                     // de atirar uma flecha com a quantidade zero
         assertEquals(0, elfoDoTeste.getFlecha().getQuantidade());
     }
@@ -108,7 +109,7 @@ public class ElfoTest{
     public void elfoAcertaFlechaEmUmDwarves(){
         Elfo elfoDoTeste = new Elfo("Légolas");
         Dwarves anao = new Dwarves();
-        elfoDoTeste.atirarEmDwarves(anao);
+        elfoDoTeste.atirarFlecha(anao);
         assertEquals(100,anao.getVida());
     }
     
@@ -116,8 +117,8 @@ public class ElfoTest{
     public void elfoAcertaDuasFlechasEmUmDwarves(){
         Elfo elfoDoTeste = new Elfo("Légolas");
         Dwarves anao = new Dwarves();
-        elfoDoTeste.atirarEmDwarves(anao);
-        elfoDoTeste.atirarEmDwarves(anao);
+        elfoDoTeste.atirarFlecha(anao);
+        elfoDoTeste.atirarFlecha(anao);
         assertEquals(90,anao.getVida());
     }
   
@@ -137,7 +138,7 @@ public class ElfoTest{
     @Test
     public void elfoAtiraFlechaToString(){
         Elfo elfoTeste = new Elfo("Lubin");
-        elfoTeste.atirarEmDwarves( new Dwarves());
+        elfoTeste.atirarFlecha( new Dwarves());
         assertEquals("Lubin possui 41 flechas e 1 nível de experiência.",
             elfoTeste.toString());
     }
@@ -145,8 +146,8 @@ public class ElfoTest{
      @Test
     public void elfoAtiraDuasFlechasEToString() {
         Elfo elfoTeste = new Elfo("Legolas");
-        elfoTeste.atirarEmDwarves(new Dwarves());
-        elfoTeste.atirarEmDwarves(new Dwarves());
+        elfoTeste.atirarFlecha(new Dwarves());
+        elfoTeste.atirarFlecha(new Dwarves());
         assertEquals("Legolas possui 40 flechas e 2 níveis de experiência.",
             elfoTeste.toString());
 

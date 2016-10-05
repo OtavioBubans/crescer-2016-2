@@ -1,7 +1,5 @@
 public class Elfo extends Personagem {
-    
 
-    
     public Elfo(String n) {
        /** nome = n;
         arco = new Item("Arco", 1);
@@ -23,16 +21,14 @@ public class Elfo extends Personagem {
        //inventario.adicionarItem(arco);
         //experiencia = 0;
         this.vida = 100;
-        this.inicializaInventario(numFlechas);
+        this.inicializarInventario(numFlechas);
     }
     
-    public void inicializaInventario(int quantFlechas){
+    protected void inicializarInventario(int quantidadeFlechas) {
         this.inventario.adicionarItem(new Item("Arco", 1));
-        this.inventario.adicionarItem(new Item("Flechas", quantFlechas >= 0 ? quantFlechas : 42));
-        
+        this.inventario.adicionarItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
     
-   
     public Item getArco(){
         return this.inventario.getItens().get(0);
     }
@@ -41,26 +37,48 @@ public class Elfo extends Personagem {
         return this.inventario.getItens().get(1);
     }
     
-    public Inventario getInventario(){
-        return inventario;
-    }
+    //public Inventario getInventario(){
+    //    return inventario;
+    //}
  
-    public void atirarFlecha() {
+    /** Minha tentativa de atirar flecha com um método atirarFlecha 
+     *  que era chamado pelo método atirarEmDwarves
+     * 
+     * public void atirarFlecha() {
         if(getFlecha().getQuantidade() >= 1){
             getFlecha().setQuantidade(getFlecha().getQuantidade() - 1);
             experiencia++;
         }
     }
     
- 
-    public void atirarEmDwarves( Dwarves anao ){
+    protected void atirarEmDwarves( Dwarves anao, int fatorExperiencia ){
         if(getFlecha().getQuantidade() > 0){
             atirarFlecha();
             //anao.setVida(anao.getVida() - 10);
             //experiencia ++;
+            experiencia += 1 * fatorExperiencia; 
+            
             anao.perdeVida();
         }
-        
+    }
+    
+    public void atirarEmDwarves( Dwarves anao ){
+        atirarEmDwarves(anao, 1);
+    }
+    */
+    
+   public void atirarFlecha(Dwarves dwarf) {
+        atirarFlechas(dwarf, 1);
+    }
+
+    protected void atirarFlechas(Dwarves dwarf, int fatorExperiencia) {
+        int quantidadeFlechas = getFlecha().getQuantidade();
+        boolean temFlecha = quantidadeFlechas > 0;
+        if (temFlecha) {
+            getFlecha().setQuantidade(quantidadeFlechas - 1);
+            experiencia += 1 * fatorExperiencia;
+            dwarf.perdeVida();
+        }
     }
     
     public String toString (){

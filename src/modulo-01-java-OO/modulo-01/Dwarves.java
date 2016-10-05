@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Dwarves extends Personagem{     
     
-    protected int vida = 110;
     private DataTerceiraEra dataNascimento;
+    {
+        vida = 110;
+    }
    
     
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
@@ -21,6 +23,8 @@ public class Dwarves extends Personagem{
         // status = Status.VIVO;
         this(null, new DataTerceiraEra(1,1,1));
     }
+    
+    public void inicializarInventario(int quantidadeFlechas) { }
     
     public void perdeVida(){
       //minha tentativa. Não deu certo pra fazer os testes. Não dizia
@@ -61,15 +65,10 @@ public class Dwarves extends Personagem{
         
     }
     
-    public int getVida(){ return vida; }
-    
-    public void setVida( int v){vida = v;}
-    
-    public DataTerceiraEra getDataNascimento(){ return this.dataNascimento;}
-    
-    public Inventario getInventario(){return inventario;}
-    
-        
+    public DataTerceiraEra getDataNascimento(){ 
+        return this.dataNascimento;
+    }
+           
     public double getNumeroSorte(){
         double numeroSorte = 101.0;
         if(dataNascimento.ehBissexto() == true && vida >= 80 && vida <=90){
@@ -92,8 +91,5 @@ public class Dwarves extends Personagem{
             inventario.aumentarUnidadesDosItens(1000);
         }
     }
-    
-    
-    }
 
-
+}
