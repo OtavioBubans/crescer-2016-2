@@ -10,6 +10,13 @@ import java.util.ArrayList;
 
 public class ElfoVerdeTest{
     
+    
+     @After 
+    // executa após cada cenário de testes. 
+    public void tearDown() { 
+        System.gc(); 
+    }
+    
     @Test
     public void testaConstrutor(){
         

@@ -9,6 +9,13 @@ import java.util.ArrayList;
 
 
 public class ElfoTest{
+    
+    
+    @After 
+    // executa após cada cenário de testes. 
+    public void tearDown() { 
+        System.gc(); 
+    }
   
     @Test
     public void elfoNasceComNome(){
@@ -200,6 +207,22 @@ public class ElfoTest{
     public void nasceCom100DeVida(){
         Elfo elfo = new Elfo("Otavio");
         assertEquals(100, elfo.getVida());
+    }
+    
+    
+    
+    @Test 
+    public void aoCriarElfoIncrementaContador() { 
+        new Elfo("Nyna Magsandoral"); 
+        assertEquals(1, Elfo.getContadorDeElfos()); 
+    } 
+ 
+    @Test 
+    public void aoCriarVariosElfosIncrementaContador() { 
+        new Elfo("Nyna Magsandoral"); 
+        new ElfoVerde("Flardryn Brynan"); 
+        new Elfo("Isilfarrel Xilrieth"); 
+        assertEquals(3, Elfo.getContadorDeElfos()); 
     }
     
     

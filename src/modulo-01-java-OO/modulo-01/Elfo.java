@@ -32,6 +32,18 @@ public class Elfo extends Personagem {
         Elfo.contadorDeElfos++;
     }
     
+    protected void finalize () throws Throwable{
+        super.finalize();
+        Elfo.contadorDeElfos--;
+    }
+    
+    public static int getContadorDeElfos(){
+        return Elfo.contadorDeElfos;
+    }
+    
+    
+    
+    
     protected void inicializarInventario(int quantidadeFlechas) {
         this.inventario.adicionarItem(new Item("Arco", 1));
         this.inventario.adicionarItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
