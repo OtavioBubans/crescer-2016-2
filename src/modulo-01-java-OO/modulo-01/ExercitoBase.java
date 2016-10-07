@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public interface ExercitoBase{
@@ -13,5 +14,6 @@ public interface ExercitoBase{
     Elfo buscarElfoPeloNome(String nome);
     ArrayList<Elfo> buscar(Status status);
     void atacar();
+    List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes);
     
 }

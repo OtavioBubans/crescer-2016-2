@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Collection;
 import java.util.Arrays;
 import java.util.Map;
@@ -8,6 +9,11 @@ public class BatalhaoEspecialDeElfos implements ExercitoBase {
     private HashMap<String, ArrayList<Elfo>> contingente;
     private HashMap<Status, ArrayList<Elfo>> grupoPorStatus;
 
+    
+    public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes){
+        return null;
+    }
+    
     public BatalhaoEspecialDeElfos() {
         contingente = new HashMap<>();
         grupoPorStatus = new HashMap<>();

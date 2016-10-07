@@ -3,6 +3,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ExercitoTest{
@@ -162,11 +163,47 @@ public class ExercitoTest{
 
     }
     
+    @Test
+    public void testaOrdenacao(){
+        
+        Exercito exercito = new Exercito();
+        List<Elfo> elfos = new ArrayList<>();
+        
+        exercito.alistar(new ElfoNoturno("Otavio",10)); //
+        exercito.alistar(new ElfoVerde("Legolas",20));
+        exercito.alistar(new ElfoVerde("Gwart", 30)); //
+        exercito.alistar(new ElfoNoturno("Bit", 40));
+        exercito.alistar(new ElfoVerde("Bee",50)); //
+        exercito.alistar(new ElfoVerde("Zua",60));
+        
+        elfos = exercito.getExercito1();
+ 
+        exercito.getOrdemDeAtaque(elfos);
+        
+        
+        //assertEquals(6,exercito.getTamanho());
+        
+        assertEquals(elfos.get(0).getNome(), "Legolas");
+        assertEquals(elfos.get(1).getNome(), "Gwart");
+        assertEquals(elfos.get(2).getNome(), "Bee");
+        assertEquals(elfos.get(3).getNome(), "Zua");
+        assertEquals(elfos.get(4).getNome(), "Otavio");
+        assertEquals(elfos.get(5).getNome(), "Bit");
+        
+        
+        
+        
+    }
+    
     private ElfoNoturno criarElfoNoturnoEMatalo() {
         ElfoNoturno suicida = new ElfoNoturno("Elfo kamikaze", 90);
         for (int i = 0; i < 90; i++)
             suicida.atirarFlecha(new Dwarves());
         return suicida;
     }
+    
+    
+    
+    
 
 }
