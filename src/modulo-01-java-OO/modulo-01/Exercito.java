@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public class Exercito{
+public class Exercito implements ExercitoBase{
     
     private ArrayList<Elfo> exercito;
     
@@ -9,16 +9,23 @@ public class Exercito{
         this.exercito = new ArrayList<>();
     }
     
-    public void alistarElfo(Elfo elfo){
+    
+     public Elfo[] getExercito(){
+         return exercito.toArray(new Elfo[exercito.size()]);
+    }
+    
+    public void alistar(Elfo elfo){
        
         if(elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde){
             exercito.add(elfo);
         }       
     }
     
-    public ArrayList<Elfo> getExercito(){
-        return this.exercito;
-    }
+   
+    
+   // public ArrayList<Elfo> getExercito(){
+   //     return this.exercito;
+   // }
     
     public int getTamanho(){
         return exercito.size();
@@ -26,28 +33,59 @@ public class Exercito{
     
     public Elfo buscarElfoPeloNome(String nome){
         
-        for(int i = 0; i < exercito.size(); i++){ 
+        /*for(int i = 0; i < exercito.size(); i++){ 
            boolean achou = nome.equals(exercito.get(i).getNome());
             if(achou){
                return exercito.get(i);
            }
         }
+        return null; */
+        
+        
+        // Java 8: contingente.filter(elfo -> nome.equals(elfo.getNome()))[0];
+        // C# 3: contingente.FirstOrDefault(elfo => elfo.Nome == nome);
+        // ES 2015 / ES6: contingente.filter(elfo => nome == elfo.nome)[0];
+        // JS 5: contingente.filter(function(elfo) { return elfo.nome == nome })[0];
+        // Ruby: contingente.filter_by { |x| x.nome == nome }
+
+        for (Elfo elfo : exercito) {
+            if (nome.equals(elfo.getNome())) {
+                return elfo;
+            }
+        }
         return null;
+  
     }
     
     public ArrayList<Elfo> buscar(Status status){
         
-        ArrayList<Elfo> elfos = new ArrayList<>();
+        //ArrayList<Elfo> elfos = new ArrayList<>();
         
-        for(int i=0; i < exercito.size(); i++){
-            if(status == getExercito().get(i).getStatus()){
-                elfos.add(getExercito().get(i));
-            }
+        //for(int i=0; i < exercito.size(); i++){
+            /**
+             * comentarios temporario
+             */
             
-        }
+            //if(status == getExercito().get(i).getStatus()){
+            //    elfos.add(getExercito().get(i));
+         //   }   
+        //}
+        //return elfos;   
         
-        return elfos;
+        // C#: return contingente.Where(x => x.Status == status);
+        ArrayList<Elfo> resultado = new ArrayList<>();
+
+        for (Elfo elfo : exercito) {
+            if (elfo.getStatus() == status) {
+                resultado.add(elfo);
+            }
+        }
+
+        return resultado;
+       
     }
     
-   
+    public void atacar() {
+        System.out.println("Exército normal atacando");
+    }
 }

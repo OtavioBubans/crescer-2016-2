@@ -8,17 +8,24 @@ import java.util.ArrayList;
 public class ExercitoTest{
     
     
+    @After 
+    // executa após cada cenário de testes. 
+    public void tearDown() { 
+        System.gc(); 
+    }
+    
+    
     @Test
     public void alistaElfosNormais(){
         
         Exercito exercito = new Exercito();
         Elfo elfoNormal = new Elfo("Otávio");
         
-        exercito.alistarElfo(elfoNormal); 
+        exercito.alistar(elfoNormal); 
         assertEquals(0, exercito.getTamanho());
         
         Elfo elfoNovo = new ElfoVerde("Otávio");
-        exercito.alistarElfo(elfoNovo);
+        exercito.alistar(elfoNovo);
         
         assertEquals(1,exercito.getTamanho());
         
@@ -30,8 +37,8 @@ public class ExercitoTest{
         ElfoNoturno elfoNoturno = new ElfoNoturno("Jaule",60);
         ElfoNoturno elfoNoturno1 = new ElfoNoturno("Bit", 90);
         
-        exercito.alistarElfo(elfoNoturno);
-        exercito.alistarElfo(elfoNoturno1);
+        exercito.alistar(elfoNoturno);
+        exercito.alistar(elfoNoturno1);
         
         assertEquals(2,exercito.getTamanho());
         assertEquals("Jaule",elfoNoturno.getNome());
@@ -45,8 +52,8 @@ public class ExercitoTest{
         ElfoVerde elfoVerde = new ElfoVerde("Otávio", 50);
         ElfoVerde elfoVerde1 = new ElfoVerde("Gwart", 70);
         
-        exercito.alistarElfo(elfoVerde);
-        exercito.alistarElfo(elfoVerde1);
+        exercito.alistar(elfoVerde);
+        exercito.alistar(elfoVerde1);
         
         assertEquals(2,exercito.getTamanho());
         assertEquals("Otávio",elfoVerde.getNome());
@@ -55,13 +62,13 @@ public class ExercitoTest{
     
     @Test
     public void alistarElfosVerdesENoturnos(){
-        Exercito exercito = new Exercito();
+        /*Exercito exercito = new Exercito();
         
         ElfoVerde elfoVerde = new ElfoVerde("Otávio", 50);
         ElfoNoturno elfoNoturno1 = new ElfoNoturno("Bit", 90);
         
-        exercito.alistarElfo(elfoVerde);
-        exercito.alistarElfo(elfoNoturno1);
+        exercito.alistar(elfoVerde);
+        exercito.alistar(elfoNoturno1);
         
         assertEquals(2,exercito.getTamanho());
         assertEquals("Otávio",elfoVerde.getNome());
@@ -69,6 +76,11 @@ public class ExercitoTest{
         
         assertEquals("Otávio", exercito.getExercito().get(0).getNome());
         assertEquals("Bit", exercito.getExercito().get(1).getNome());
+        */
+       Exercito exercito = new Exercito();
+       Elfo elfoNoturno = new ElfoNoturno("Night Elf");
+       exercito.alistar(elfoNoturno);
+       assertEquals(elfoNoturno, exercito.getExercito()[0]);
         
     }
     
@@ -76,14 +88,14 @@ public class ExercitoTest{
     public void buscaElfo(){
         Exercito exercito = new Exercito();
         
-        exercito.alistarElfo(new ElfoVerde("Otavio",10));
-        exercito.alistarElfo(new ElfoVerde("Legolas",20)); 
-        exercito.alistarElfo(new ElfoVerde("Gwart", 30));
+        exercito.alistar(new ElfoVerde("Otavio",10));
+        exercito.alistar(new ElfoVerde("Legolas",20)); 
+        exercito.alistar(new ElfoVerde("Gwart", 30));
         
         ElfoVerde elfoVerde = new ElfoVerde("Bit", 40);
-        exercito.alistarElfo(elfoVerde);
-        exercito.alistarElfo(new ElfoVerde("Bee",50));
-        exercito.alistarElfo(new ElfoVerde("Zua",60));
+        exercito.alistar(elfoVerde);
+        exercito.alistar(new ElfoVerde("Bee",50));
+        exercito.alistar(new ElfoVerde("Zua",60));
         
         Elfo nomeBuscado = exercito.buscarElfoPeloNome(elfoVerde.getNome());
         
@@ -94,12 +106,12 @@ public class ExercitoTest{
     public void buscaElfoInexistente(){
         Exercito exercito = new Exercito();
         
-        exercito.alistarElfo(new ElfoVerde("Otavio",10));
-        exercito.alistarElfo(new ElfoVerde("Legolas",20));
-        exercito.alistarElfo(new ElfoVerde("Gwart", 30));
-        exercito.alistarElfo(new ElfoVerde("Bit", 40));
-        exercito.alistarElfo(new ElfoVerde("Bee",50));
-        exercito.alistarElfo(new ElfoVerde("Zua",60));
+        exercito.alistar(new ElfoVerde("Otavio",10));
+        exercito.alistar(new ElfoVerde("Legolas",20));
+        exercito.alistar(new ElfoVerde("Gwart", 30));
+        exercito.alistar(new ElfoVerde("Bit", 40));
+        exercito.alistar(new ElfoVerde("Bee",50));
+        exercito.alistar(new ElfoVerde("Zua",60));
         
         Elfo nomeBuscado = exercito.buscarElfoPeloNome("Batman");
         
@@ -109,31 +121,16 @@ public class ExercitoTest{
     @Test
     public void testaBuscaMorto(){
         
-        Exercito exercito = new Exercito();
-        
-        ArrayList<Elfo> elfos = new ArrayList<>();
-        
-        exercito.alistarElfo(new ElfoNoturno("Otavio",10)); //
-        exercito.alistarElfo(new ElfoVerde("Legolas",20));
-        exercito.alistarElfo(new ElfoVerde("Gwart", 30)); //
-        exercito.alistarElfo(new ElfoNoturno("Bit", 40));
-        exercito.alistarElfo(new ElfoVerde("Bee",50)); //
-        exercito.alistarElfo(new ElfoVerde("Zua",60));
-        
-        Status status = Status.MORTO;
-        
-        exercito.getExercito().get(0).setStatus(status);
-        exercito.getExercito().get(3).setStatus(status);
-        exercito.getExercito().get(5).setStatus(status);
-        
-        elfos = exercito.buscar(status);
-        
-        assertEquals(3,elfos.size());
-        
-        assertEquals(Status.MORTO, elfos.get(0).getStatus()); 
-        assertEquals(Status.MORTO, elfos.get(1).getStatus());
-        assertEquals(Status.MORTO, elfos.get(2).getStatus());
-
+       Exercito exercito = new Exercito();
+        Elfo recruta1 = new ElfoVerde("Elfo Recruta");
+        Elfo recruta2 = criarElfoNoturnoEMatalo();
+        Elfo recruta3 = new ElfoVerde("Elfo Recruta");
+        exercito.alistar(recruta1);
+        exercito.alistar(recruta2);
+        exercito.alistar(recruta3);
+        ArrayList<Elfo> resultado = exercito.buscar(Status.MORTO);
+        assertEquals(1, resultado.size());
+        assertEquals(recruta2, resultado.get(0));
     }
     
     @Test
@@ -143,12 +140,12 @@ public class ExercitoTest{
         
         ArrayList<Elfo> elfos = new ArrayList<>();
         
-        exercito.alistarElfo(new ElfoNoturno("Otavio",10)); //
-        exercito.alistarElfo(new ElfoVerde("Legolas",20));
-        exercito.alistarElfo(new ElfoVerde("Gwart", 30)); //
-        exercito.alistarElfo(new ElfoNoturno("Bit", 40));
-        exercito.alistarElfo(new ElfoVerde("Bee",50)); //
-        exercito.alistarElfo(new ElfoVerde("Zua",60));
+        exercito.alistar(new ElfoNoturno("Otavio",10)); //
+        exercito.alistar(new ElfoVerde("Legolas",20));
+        exercito.alistar(new ElfoVerde("Gwart", 30)); //
+        exercito.alistar(new ElfoNoturno("Bit", 40));
+        exercito.alistar(new ElfoVerde("Bee",50)); //
+        exercito.alistar(new ElfoVerde("Zua",60));
         
         Status status = Status.VIVO;
           
@@ -163,6 +160,13 @@ public class ExercitoTest{
         assertEquals(Status.VIVO, elfos.get(4).getStatus());
         assertEquals(Status.VIVO, elfos.get(5).getStatus());
 
+    }
+    
+    private ElfoNoturno criarElfoNoturnoEMatalo() {
+        ElfoNoturno suicida = new ElfoNoturno("Elfo kamikaze", 90);
+        for (int i = 0; i < 90; i++)
+            suicida.atirarFlecha(new Dwarves());
+        return suicida;
     }
 
 }
