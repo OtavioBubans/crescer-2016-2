@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9904363-9F84-A7A3-03EF-51E1D7BFD530" name="Urna">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:25:50 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDUrna" id="F628789A-FC46-E9AB-D436-E3BE9C73749D">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:26:24 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Eleitor_IDEleitor" id="11B903AC-D036-EF98-0BE2-D37D84F3760F">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:36:53 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FDB4B0B1-2235-0866-E387-37A0ECDEB73A" referredColumn="2385ED3D-5030-E6EE-6A19-0753F5FFC3FB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5B1022C7-F906-D27A-0C15-C68BCAE70601" name="Urna_PK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:26:24 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F628789A-FC46-E9AB-D436-E3BE9C73749D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C74DA68F-29E9-2F5E-1DE2-1D97551B41B5" name="Urna_Eleitor_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:36:53 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="11B903AC-D036-EF98-0BE2-D37D84F3760F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

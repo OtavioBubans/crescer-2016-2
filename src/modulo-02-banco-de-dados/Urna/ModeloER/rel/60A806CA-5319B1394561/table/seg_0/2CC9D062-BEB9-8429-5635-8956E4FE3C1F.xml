@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2CC9D062-BEB9-8429-5635-8956E4FE3C1F" name="Eleitor">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:57:43 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEleitor" id="2385ED3D-5030-E6EE-6A19-0753F5FFC3FB">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:58:18 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeCompletoEleitor" id="43D81AAB-4A78-5E67-60FD-55FA9B5F0F28">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:58:55 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RG" id="13F629E1-2162-5453-49CD-9EED19C29E3A">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:59:24 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TituloEleitor" id="8CFF1E8E-527C-8693-61E2-C63DD6FD28F6">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:00:40 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>16</dataTypePrecision>
+<ownDataTypeParameters>,16,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataNascimento" id="C6C0C668-311E-A3B9-440A-74C00F13510A">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:01:13 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Zona" id="A95D9D8F-8CB7-7092-4F97-5EE0E90316B1">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:01:42 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Secao" id="B2711EC8-6FB0-3CBC-247B-82F620FD4442">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:02:11 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CDDFC0BC-2F8E-7CFB-3C8F-E2ECFBBE9356" name="Eleitor_PK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:58:18 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2385ED3D-5030-E6EE-6A19-0753F5FFC3FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

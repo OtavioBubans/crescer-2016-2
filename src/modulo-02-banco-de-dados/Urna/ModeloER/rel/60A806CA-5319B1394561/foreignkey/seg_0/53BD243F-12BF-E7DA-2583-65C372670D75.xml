@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="53BD243F-12BF-E7DA-2583-65C372670D75" containerWithKeyObject="261124CB-7A06-A7C5-733C-57B3102D9792" localFKIndex="DC28B9BD-054C-47C8-8B2C-F6323DC55276" name="Candidato_Partido_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:32:10 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>351DB1D4-50C7-D104-19BC-A917D433945A</referredTableID>
+<keyObject>8759231C-645D-DEC8-849C-7E3E0F592DDF</keyObject>
+<referredKeyID>8759231C-645D-DEC8-849C-7E3E0F592DDF</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

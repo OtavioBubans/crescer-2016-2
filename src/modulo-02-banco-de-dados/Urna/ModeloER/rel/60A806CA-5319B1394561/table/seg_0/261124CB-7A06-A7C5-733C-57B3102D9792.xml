@@ -1,0 +1,216 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="261124CB-7A06-A7C5-733C-57B3102D9792" name="Candidato">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:46:38 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCandidato" id="80506CAE-A8BA-87BA-C1A6-1889ECC299A2">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:47:11 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeCompleto" id="7A9F4AA0-4C41-813F-88B9-4A7573BA465F">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:47:51 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataNascimento" id="909BA8CE-195D-ADB4-9994-E2B96E932D9F">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:48:07 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomePopular" id="785E0C1A-47A5-B5A6-3A3B-765B7727E0A3">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:48:50 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RegistroTRE" id="48A0659B-8454-80AF-597D-1D873B556C0B">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:50:00 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cidade" id="C68082BB-9FC4-DFDD-8253-2520FF14D6A9">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:50:44 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="DEFD4509-A2E8-EEE5-53CF-483B5A2FA28F">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:51:40 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Partido" id="42A142E8-D8EC-32BF-A81D-7E3704F6F98E">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:52:14 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Foto" id="1630CD85-BDDD-70EA-A4A5-146436B85302">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:52:51 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumeroCandidato" id="0B31B43D-090E-D8AC-5F2A-0F036845916D">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:53:26 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cargo_IDCargo" id="70E26AAB-EAA0-A4B4-8376-D0EC735E5D9C">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:56:35 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4EC41C2-19E2-75D6-61D5-DFBD8D9BF5FD" referredColumn="705D0296-D20F-D03E-EB8D-30C57903B53F"/>
+</associations>
+</Column>
+<Column name="Votar_IDVoto" id="00BD19EA-43EE-1504-5456-752926441B79">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:15:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F065BBB6-340B-F498-19C5-EACCD225D1A0" referredColumn="5FD454F0-F05D-E4F1-A6C6-CD418AF70F99"/>
+</associations>
+</Column>
+<Column name="Partido_IDPartido" id="093414EF-B02C-4E6A-EEB1-A00FF158A8EC">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:32:10 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="53BD243F-12BF-E7DA-2583-65C372670D75" referredColumn="BFF81683-3C9E-7854-6728-27A3B233F7F3"/>
+</associations>
+</Column>
+<Column name="QuantidadeVotos" id="C3C36A77-72AC-D4C8-85DE-9D0E2D2215D4">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:34:17 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10000000</dataTypePrecision>
+<ownDataTypeParameters>,10000000,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74FBCE85-8D18-3A78-D4F6-191F2FBB157E" name="Candidato_PK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:08:24 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80506CAE-A8BA-87BA-C1A6-1889ECC299A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A82D755B-5692-EEB2-ED52-40A178787485" name="Candidato_Cargo_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:56:35 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70E26AAB-EAA0-A4B4-8376-D0EC735E5D9C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29FEAE7A-4F06-9B7B-BD71-7BCF1D4ADF0C" name="Candidato_Votar_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:15:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="00BD19EA-43EE-1504-5456-752926441B79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC28B9BD-054C-47C8-8B2C-F6323DC55276" name="Candidato_Partido_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:32:10 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="093414EF-B02C-4E6A-EEB1-A00FF158A8EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

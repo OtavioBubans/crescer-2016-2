@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="48D84D54-EC65-C215-2CCC-10AC85E16A06" name="Cargo">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:54:03 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCargo" id="705D0296-D20F-D03E-EB8D-30C57903B53F">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:54:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeCargo" id="43E90059-71FE-3C95-9B95-0540FD877AA0">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:54:52 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BDEBC7C7-7553-7CBE-4770-3DD27CFFFE49" name="Cargo_PK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 18:54:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="705D0296-D20F-D03E-EB8D-30C57903B53F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

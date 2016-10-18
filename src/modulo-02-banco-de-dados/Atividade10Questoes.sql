@@ -4,7 +4,6 @@ Select * from Pedido;
 
 Select * from PedidoItem;
 
-
 Select * from Produto;
 
 Select * from ProdutoMaterial;
@@ -15,26 +14,43 @@ Select IDPedido,
 		DataPedido 
 	From Pedido
 	Where DataPedido between convert(datetime, '01/09/2016',103)
-						and	convert(datetime, '30/09/2016', 103);
+						and	convert(datetime, '30/09/2016', 103); 
+
+Select count(1) as totalPedidos
+	From Pedido
+	Where DataPedido between convert(datetime, '01/09/2016',103)
+						and	convert(datetime, '30/09/2016', 103)+.99999; 
 		
 	
 -- 2 Lista dos produtos que utiliza o material com ID 15836					
  
+ -- sem nome e apenas o ID
  Select IDProduto,
 		IDMaterial	
 	From ProdutoMaterial
 	Where IDMaterial = 15836;
 
 
+-- nome do Produto
+Select IDProduto, Nome
+	From Produto pro
+	Where Exists (Select 1
+					From ProdutoMAterial PM
+					Where pm.IDProduto = pro.IDProduto
+					And pm.IDMaterial = 15836)
+
+create index IX_ProdutoMaterial_Material  on ProdutoMaterial (IDMaterial);
+
+
 -- 3 Lista de todos clientes que tenha LTDA no nome ou razão social
 
 Select * from Cliente; 
 
-Select	Nome, 
+Select	IDCliente, Nome, 
 		RazaoSocial 		
 	From Cliente
-	Where	RazaoSocial like '%Ltda%' 
-		OR	Nome like '%Ltda%';	
+	Where	RazaoSocial like '%LTDA%' 
+		OR	Nome like '%LTDA%';	
 
 /* 4 - Crie (insira) um novo registro na tabela de Produto, com as seguintes informações:
 		Nome: Galocha Maragato
@@ -75,9 +91,9 @@ liste também qual o Estado possuí o menor número de clientes.*/
 Select * From Cidade
 Select * From Cliente
 
-Select top 1 With TIES 
-			i.UF as Estado,
-			c.IDCliente, Count(1) as NumeroClientes
+Select 
+			UF as Estado,
+			IDCliente, Count(1) as NumeroClientes
 		From Cliente c
 
 		Inner join Cidade i on i.IDCidade = c.IDCidade
@@ -85,10 +101,16 @@ Select top 1 With TIES
 		Order by NumeroClientes;
 		
 
-Select top 1 With TIES IDCidade, count(1) as TotalDeCidade
+Select IDCidade, count(1) as TotalDeCidade
 	From Cliente
 	Group by IDCidade
 Order by TotalDeCidade DESC	
+
+
+Select UF, count (1) as totalUF
+	from Cidade
+	Group by UF
+
 
 	
 

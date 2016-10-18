@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A37CC0B4-2D7E-1DA5-6F0E-93AF21C5E9E7" name="Voto">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:04:02 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDVoto" id="5FD454F0-F05D-E4F1-A6C6-CD418AF70F99">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:07:12 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Urna_IDUrna" id="683153D4-7419-B25B-3240-D71BE8F11729">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:36:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0995EE2F-F56B-68B6-702F-26D911D1A8E3" referredColumn="F628789A-FC46-E9AB-D436-E3BE9C73749D"/>
+</associations>
+</Column>
+<Column name="VotoBranco" id="E0C51177-A042-E716-003D-DFDDF881CF43">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:40:20 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10000000</dataTypePrecision>
+<ownDataTypeParameters>,10000000,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CA748DB-D283-6D7B-849F-D6132BCEE63E" name="Votar_PK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:07:12 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FD454F0-F05D-E4F1-A6C6-CD418AF70F99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="490DCCC4-714D-7FD0-CC6B-D0B9317B4982" name="Voto_Urna_FK">
+<createdBy>otavio.bubans</createdBy>
+<createdTime>2016-10-18 19:36:27 UTC</createdTime>
+<ownerDesignName>ModeloER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="683153D4-7419-B25B-3240-D71BE8F11729"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
