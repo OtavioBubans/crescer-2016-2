@@ -47,6 +47,7 @@ var menornumero = function(){
 var arrayAletorio = [1,2,'a','d',null, undefined,{pais: 'Brasil'}, {pi:3.14},5];
 
 function find(arrayAletorio,menornumero() ;
+
 */
 
 // Exercicio 4  - Crie uma função chamada subtrair que realiza a subtração
@@ -56,4 +57,23 @@ function subtrair(num1,num2){
   return num1 - num2;
 }
 
-console.log(subtrair(prompt(), prompt()));
+//console.log(subtrair(prompt(), prompt()));
+
+
+// Exercicio 5 - Escreva uma função iguais que recebe dois parâmetros e retorna true apenas se os valores
+// dos parâmetros forem iguais ou se eles forem objetos com as mesmas propriedades com valores
+// iguais e assim recursivamente (ou seja, em até vários níveis de propriedades dentro dos objetos).
+
+
+
+// Exercicio 6 - Escreva uma função ctrlC que recebe um parâmetro e
+// realiza a cópia de todos seus valores e retorne o resultado.
+
+ function ctrlC(elemento){
+   var copia = elemento;
+   return copia;
+ }
+
+ var a = [2,6,'t',{y:'coisas'}];
+
+ console.log(ctrlC(a));
