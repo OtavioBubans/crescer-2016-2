@@ -13,11 +13,14 @@ class Heroi{
     for(let i = 0; i < herois.length; i++){
 
       let heroisFora = [];
+      let personagem;
       for(let evento in herois[i]){
-        if(events.itens[evento].name !== 'Civil War';){
+        if(herois[i].events.itens[evento].name !== 'Civil War'){
           heroisFora += herois[i];
+          personagem = this.herois[i].name;
         }
       }
+      return
     }
   }// fim do metodo foraDaGuerraCivil
 
@@ -33,10 +36,62 @@ class Heroi{
     let maior = 0;
     let personagem;
     for(let i = 0; i < herois.length; i++){
-      if(herois[i].comics.available > maior){
-        maior = herois[i].comics.available;
-        personagem = herois[1].name;
+      if(this.herois[i].comics.available > maior){
+        maior = this.herois[i].comics.available;
+        personagem = this.herois[i].name;
       }
     }
   } // fim metodo maisPublicado
+
+
+// dadosHerois. reduce ((ac,heroi) => heroi.comics.available,0)
+
+// daddosHeroi.map(heroi => heroi.comics.avaible);
+
+
+// marvel[i].comics.itens[i].pageCount.
+
+/* 4 - Escreva uma função mediaPaginas() de instância da classe Herois que retorna a média de páginas
+    de todos quadrinhos dos personagens. Utilize a propriedade pageCount da comic.
+*/
+  mediaPaginas(){
+
+      let arrayPersonagens = [];
+
+      for(let i = 0; i < herois.length; i++){
+      //  herois[i].reduce(( ac, itens) => itens.comic.pageCount,0 );
+
+
+
+      }
+
+  }
+
+
+
+  /*  5- Escreva um método seriesPorLongevidade de instância da classe Herois
+      que retorna todas as séries dos personagens ordenadas por tempo de atividade descendente,
+      ou seja, as séries que ficaram / estão há mais tempo sendo produzidas vêm primeiro.
+      Para saber a longevidade de uma série, basta utilizar os campos startYear e endYear da série.
+  */
+
+  seriesPorLongevidade(){
+
+  }
+
+
+
+  /*  6 - Escreva um método comicMaisCara de instância da classe Herois que retorna
+      o objeto comic mais caro entre todos personagens.
+      Para descobrir o preço total de um comic, some todo seu array prices
+  */
+
+  comicMaisCara(){
+    let maior;
+
+    for( let i = 0; i < herois.length; i++){
+      // dadosHerois. reduce ((ac,heroi) => heroi.comics.available,0)
+      herois.reduce((ac, heroi) => heroi.comics.avaible,0);
+    }
+  }
 }
