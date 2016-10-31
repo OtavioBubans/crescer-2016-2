@@ -41,6 +41,10 @@ class Heroi{
         personagem = this.herois[i].name;
       }
     }
+
+
+
+
   } // fim metodo maisPublicado
 
 
@@ -59,16 +63,10 @@ class Heroi{
       let arrayPersonagens = [];
 
       for(let i = 0; i < herois.length; i++){
-      //  herois[i].reduce(( ac, itens) => itens.comic.pageCount,0 );
-
-
-
+      //  herois.reduce(( ac, itens) => ac + itens.comic.pageCount,0 );
       }
 
   }
-
-
-
   /*  5- Escreva um método seriesPorLongevidade de instância da classe Herois
       que retorna todas as séries dos personagens ordenadas por tempo de atividade descendente,
       ou seja, as séries que ficaram / estão há mais tempo sendo produzidas vêm primeiro.
@@ -78,8 +76,6 @@ class Heroi{
   seriesPorLongevidade(){
 
   }
-
-
 
   /*  6 - Escreva um método comicMaisCara de instância da classe Herois que retorna
       o objeto comic mais caro entre todos personagens.

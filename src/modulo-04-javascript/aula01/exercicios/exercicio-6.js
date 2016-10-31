@@ -1,6 +1,8 @@
 // Exercicio 6 - Escreva uma função ctrlC que recebe um parâmetro e
 // realiza a cópia de todos seus valores e retorne o resultado.
 
+//forma errada para o exercicio
+
  function ctrlC(elemento){
    var copia = elemento;
    return copia;
