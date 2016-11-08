@@ -12,6 +12,6 @@ namespace StreetFigther.Dominio
         void IncluirPersonagem(Personagem personagem);
         void EditarPersonagem(Personagem personagem);
         void ExcluirPersonagem(Personagem personagem);
-        void FilterByNome(Personagem personagem);
+        void FilterByNome(string nome);
     }
 }

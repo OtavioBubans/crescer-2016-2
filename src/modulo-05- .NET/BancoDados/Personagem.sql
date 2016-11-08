@@ -11,6 +11,7 @@
 	Constraint PK_Personagem Primary key(IDPersonagem)
 	);
 
+	Select * from Personagem
 	drop table Personagem
 
 	INSERT INTO Personagem Values ('http//upload.wikimedia.org/wikipedia/en/e/e5/Ryu_TvC.png',
