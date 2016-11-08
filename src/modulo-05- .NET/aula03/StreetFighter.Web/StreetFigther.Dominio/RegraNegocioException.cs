@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StreetFigther.Dominio
 {
-    public class RegraNegocioException : Exception
+    public class RegraNegocioException :Exception
     {
-        public RegraNegocioException(string mensgagem) : base(mensgagem)
-        { }
+        public RegraNegocioException(string mensagem) :base(mensagem)
+        {
+        }
     }
 }
+

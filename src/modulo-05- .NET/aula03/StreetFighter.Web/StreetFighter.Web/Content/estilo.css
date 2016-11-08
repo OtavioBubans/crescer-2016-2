@@ -13,7 +13,8 @@ body {
     border: 2px solid #AAA; 
     border-radius: 10px;
     background: rgba(168,168,168,0.5);
-    height:50px; width:400px;
+    height:50px;
+    width:450px;
 }
 
 #menu ul{
@@ -41,7 +42,7 @@ body {
     margin-left:auto;
     margin-right:auto;
     min-height:60px;
-    width:800px;
+    width:820px;
 }
 
 #topo h2{
@@ -54,7 +55,7 @@ body {
     margin-left:auto;
     margin-right:auto;
     min-height:500px;
-    width:800px;
+    width:820px;
     font-family:arial;
     overflow: auto;
 }

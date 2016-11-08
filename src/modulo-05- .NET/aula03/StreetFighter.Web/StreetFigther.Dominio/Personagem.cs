@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StreetFigther.Dominio
 {
     public class Personagem
@@ -22,7 +23,10 @@ namespace StreetFigther.Dominio
         public Personagem(string nome, string origem)
         {
             if (nome.ToUpperInvariant().Contains("NUNES"))
+            {
                 throw new RegraNegocioException("Não é permitido cadastrar um personagem overpowered.");
+            }
+                
 
             this.Nome = nome;
             this.Origem = origem;

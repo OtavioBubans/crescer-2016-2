@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StreetFigther.Dominio
 {
-    public interface IPersonagemRepositorio
+    interface IPersonagemRepositorio
     {
-        List<Personagem> ListaPersonagens();
+        List<Personagem> ListarPersonagens(string filtroNome);
         void IncluirPersonagem(Personagem personagem);
         void EditarPersonagem(Personagem personagem);
         void ExcluirPersonagem(Personagem personagem);

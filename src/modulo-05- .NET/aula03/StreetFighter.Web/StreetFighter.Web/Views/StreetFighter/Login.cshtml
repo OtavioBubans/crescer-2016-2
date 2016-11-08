@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Index", "StreetFighter", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextBox("usuario", "", new { placeholder = "usuario" });
+    @Html.Password("senha", "", new { placeholder = "senha" });
+
+    <button type="submit">Entrar</button>
+}

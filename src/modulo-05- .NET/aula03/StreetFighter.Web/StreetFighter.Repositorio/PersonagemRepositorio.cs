@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace StreetFighter.Repositorio
 {
     public class PersonagemRepositorio : IPersonagemRepositorio
@@ -30,6 +31,11 @@ namespace StreetFighter.Repositorio
         }
 
         public List<Personagem> ListaPersonagens()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FilterByNome(Personagem personagem)
         {
             throw new NotImplementedException();
         }
