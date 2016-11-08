@@ -59,14 +59,19 @@ namespace StreetFighter.Repositorio
 
                 if (reader.Read())
                 {
-                    result = ConvertReaderToPersonagen(reader);
+                    result = null;// ConvertReaderToPersonagen(reader);
                 }
 
                 connection.Close();
             }
 
-            return result;
+            return null;
 
+        }
+
+        void IPersonagemRepositorio.FilterByNome(string nome)
+        {
+            throw new NotImplementedException();
         }
     }
 }

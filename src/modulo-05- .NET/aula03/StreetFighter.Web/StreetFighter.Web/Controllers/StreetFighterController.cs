@@ -1,5 +1,4 @@
 ﻿using StreetFighter.Aplicativo;
-using StreetFighter.Dominio;
 using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
