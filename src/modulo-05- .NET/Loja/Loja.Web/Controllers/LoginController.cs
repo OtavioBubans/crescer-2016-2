@@ -28,5 +28,15 @@ namespace Loja.Web.Controllers
             
             return null;
         }
+
+        public ActionResult Cadastrar(string login, string senha)
+        {
+            ServicoDeCriptografia criptografaSenha = new ServicoDeCriptografia();
+            string senhaCriptografada = criptografaSenha.Criptografar(senha);
+
+            Usuario usuario = new Usuario(login, senhaCriptografada);
+
+            return null;
+        }
     }
 }
