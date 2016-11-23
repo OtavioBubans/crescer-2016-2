@@ -1,0 +1,45 @@
+﻿@model LojaDeItens.Web.Models.ItemMagico.ItemParaEdicaoViewModel
+@{
+    string titulo = Model == null ? "Criar Novo Item" : "Editar";
+    ViewBag.Title = titulo;
+}
+
+<h2>@titulo</h2>
+
+<div>
+    @using (Ajax.BeginForm("Salvar", "ItemMagico", new AjaxOptions
+        {
+            HttpMethod = "Post",
+            OnSuccess = "itemMagicoEditar.sucessoNoCadastro",
+            OnFailure = "Algum erro na Edição"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+        <div>
+            @Html.LabelFor(m => m.Nome)
+            @Html.TextBoxFor(m => m.Nome)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Descricao)
+            @Html.TextBoxFor(m => m.Descricao)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Preco)
+            @Html.TextBoxFor(m => m.Preco)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Estoque)
+            @Html.TextBoxFor(m => m.Estoque)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Raro)
+            @Html.CheckBoxFor(m => m.Raro)
+        </div>
+
+        <button type="submit">Salvar</button>
+    }
+</div>

@@ -54,10 +54,6 @@
     <Compile Include="Migrations\201611100210421_Inicial.Designer.cs">
       <DependentUpon>201611100210421_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611101725227_Initial.cs" />
-    <Compile Include="Migrations\201611101725227_Initial.Designer.cs">
-      <DependentUpon>201611101725227_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\HeroisRepositorio.cs" />
@@ -75,9 +71,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611100210421_Inicial.resx">
       <DependentUpon>201611100210421_Inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611101725227_Initial.resx">
-      <DependentUpon>201611101725227_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
