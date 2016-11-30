@@ -25,8 +25,11 @@ public class Run {
         final Pessoa pessoa = new Pessoa();
         //insert.setIdPessoa(1l);
         pessoa.setNmPessoa("Otávio");
-        
         pessoaRepository.insert(pessoa);
+        
+        
+        
+        
        
         
 //        
