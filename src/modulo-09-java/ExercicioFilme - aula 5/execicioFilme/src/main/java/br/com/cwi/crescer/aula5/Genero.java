@@ -42,13 +42,15 @@ public class Genero implements Serializable {
     @NotNull
     @Column(name = "IDGENERO")
     private BigDecimal idgenero;
+   
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "DESCRICAO")
     private String descricao;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "generoIdgenero")
-    private Collection<Filme> filmeCollection;
+    
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "generoIdgenero")
+//    private Collection<Filme> filmeCollection;
 
     public Genero() {
     }
@@ -78,38 +80,4 @@ public class Genero implements Serializable {
         this.descricao = descricao;
     }
 
-    @XmlTransient
-    public Collection<Filme> getFilmeCollection() {
-        return filmeCollection;
-    }
-
-    public void setFilmeCollection(Collection<Filme> filmeCollection) {
-        this.filmeCollection = filmeCollection;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idgenero != null ? idgenero.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Genero)) {
-            return false;
-        }
-        Genero other = (Genero) object;
-        if ((this.idgenero == null && other.idgenero != null) || (this.idgenero != null && !this.idgenero.equals(other.idgenero))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.crescer.aula5.Genero[ idgenero=" + idgenero + " ]";
-    }
-    
 }

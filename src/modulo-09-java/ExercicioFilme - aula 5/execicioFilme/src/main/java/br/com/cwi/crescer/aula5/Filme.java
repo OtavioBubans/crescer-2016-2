@@ -45,11 +45,13 @@ public class Filme implements Serializable {
     @NotNull
     @Column(name = "IDFILME")
     private BigDecimal idfilme;
+   
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
     @Column(name = "TITULO")
     private String titulo;
+   
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
@@ -58,12 +60,14 @@ public class Filme implements Serializable {
     @Column(name = "DATALANCAMENTO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datalancamento;
+  
     @JoinColumn(name = "CLASSIFICACAO_IDCLASSIFICACAO", referencedColumnName = "IDCLASSIFICACAO")
     @ManyToOne(optional = false)
     private Classificacao classificacaoIdclassificacao;
     @JoinColumn(name = "ELENCO_IDELENCO", referencedColumnName = "IDELENCO")
     @ManyToOne(optional = false)
     private Elenco elencoIdelenco;
+    
     @JoinColumn(name = "GENERO_IDGENERO", referencedColumnName = "IDGENERO")
     @ManyToOne(optional = false)
     private Genero generoIdgenero;
@@ -148,29 +152,4 @@ public class Filme implements Serializable {
         this.idiomaIdidioma = idiomaIdidioma;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idfilme != null ? idfilme.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Filme)) {
-            return false;
-        }
-        Filme other = (Filme) object;
-        if ((this.idfilme == null && other.idfilme != null) || (this.idfilme != null && !this.idfilme.equals(other.idfilme))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.crescer.aula5.Filme[ idfilme=" + idfilme + " ]";
-    }
-    
 }

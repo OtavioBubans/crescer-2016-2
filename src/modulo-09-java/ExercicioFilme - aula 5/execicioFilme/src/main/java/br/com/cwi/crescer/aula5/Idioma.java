@@ -42,6 +42,7 @@ public class Idioma implements Serializable {
     @NotNull
     @Column(name = "IDIDIOMA")
     private BigDecimal ididioma;
+    
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -78,38 +79,4 @@ public class Idioma implements Serializable {
         this.nomeidioma = nomeidioma;
     }
 
-    @XmlTransient
-    public Collection<Filme> getFilmeCollection() {
-        return filmeCollection;
-    }
-
-    public void setFilmeCollection(Collection<Filme> filmeCollection) {
-        this.filmeCollection = filmeCollection;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (ididioma != null ? ididioma.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Idioma)) {
-            return false;
-        }
-        Idioma other = (Idioma) object;
-        if ((this.ididioma == null && other.ididioma != null) || (this.ididioma != null && !this.ididioma.equals(other.ididioma))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.crescer.aula5.Idioma[ ididioma=" + ididioma + " ]";
-    }
-    
 }

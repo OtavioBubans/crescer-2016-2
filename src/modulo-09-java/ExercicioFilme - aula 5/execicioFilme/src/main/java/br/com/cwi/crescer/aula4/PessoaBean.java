@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.aula4;
 
+import br.com.cwi.crescer.aula5.AbstractDao;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -27,8 +28,5 @@ public class PessoaBean extends AbstractDao<Pessoa, Long>{
     public List<Pessoa> findAll() {
         return this.getEntityManager().createQuery("select p from Pessoa p").getResultList();
     }
-
-    
-    
     
 }

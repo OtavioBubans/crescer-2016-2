@@ -48,8 +48,7 @@ public class Ator implements Serializable {
     @Size(min = 1, max = 50)
     @Column(name = "NOMEATOR")
     private String nomeator;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "atorIdator")
-    private Collection<Elenco> elencoCollection;
+    
 
     public Ator() {
     }
@@ -77,40 +76,6 @@ public class Ator implements Serializable {
 
     public void setNomeator(String nomeator) {
         this.nomeator = nomeator;
-    }
-
-    @XmlTransient
-    public Collection<Elenco> getElencoCollection() {
-        return elencoCollection;
-    }
-
-    public void setElencoCollection(Collection<Elenco> elencoCollection) {
-        this.elencoCollection = elencoCollection;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idator != null ? idator.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ator)) {
-            return false;
-        }
-        Ator other = (Ator) object;
-        if ((this.idator == null && other.idator != null) || (this.idator != null && !this.idator.equals(other.idator))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.crescer.aula5.Ator[ idator=" + idator + " ]";
     }
     
 }

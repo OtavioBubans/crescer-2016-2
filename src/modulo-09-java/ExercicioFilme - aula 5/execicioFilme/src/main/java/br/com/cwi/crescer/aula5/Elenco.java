@@ -54,8 +54,7 @@ public class Elenco implements Serializable {
     @JoinColumn(name = "ATOR_IDATOR", referencedColumnName = "IDATOR")
     @ManyToOne(optional = false)
     private Ator atorIdAtor;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "elencoIdelenco")
-    private Collection<Filme> filmeCollection;
+
 
     public Elenco() {
     }
@@ -92,16 +91,5 @@ public class Elenco implements Serializable {
     public void setAtorIdAtor(Ator atorIdAtor) {
         this.atorIdAtor = atorIdAtor;
     }
-
-    @XmlTransient
-    public Collection<Filme> getFilmeCollection() {
-        return filmeCollection;
-    }
-
-    public void setFilmeCollection(Collection<Filme> filmeCollection) {
-        this.filmeCollection = filmeCollection;
-    }
-
-  
     
 }

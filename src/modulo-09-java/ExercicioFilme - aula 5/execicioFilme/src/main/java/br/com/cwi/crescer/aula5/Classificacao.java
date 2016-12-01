@@ -53,8 +53,7 @@ public class Classificacao implements Serializable {
    
     @Column(name = "IDADE")
     private BigInteger idade;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "classificacaoIdclassificacao")
-    private Collection<Filme> filmeCollection;
+
 
     public Classificacao() {
     }
@@ -92,38 +91,4 @@ public class Classificacao implements Serializable {
         this.idade = idade;
     }
 
-    @XmlTransient
-    public Collection<Filme> getFilmeCollection() {
-        return filmeCollection;
-    }
-
-    public void setFilmeCollection(Collection<Filme> filmeCollection) {
-        this.filmeCollection = filmeCollection;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idclassificacao != null ? idclassificacao.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Classificacao)) {
-            return false;
-        }
-        Classificacao other = (Classificacao) object;
-        if ((this.idclassificacao == null && other.idclassificacao != null) || (this.idclassificacao != null && !this.idclassificacao.equals(other.idclassificacao))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "br.com.cwi.crescer.aula5.Classificacao[ idclassificacao=" + idclassificacao + " ]";
-    }
-    
 }
