@@ -30,12 +30,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "FILME")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Filme.findAll", query = "SELECT f FROM Filme f")
-    , @NamedQuery(name = "Filme.findByIdfilme", query = "SELECT f FROM Filme f WHERE f.idfilme = :idfilme")
-    , @NamedQuery(name = "Filme.findByTitulo", query = "SELECT f FROM Filme f WHERE f.titulo = :titulo")
-    , @NamedQuery(name = "Filme.findByDiretor", query = "SELECT f FROM Filme f WHERE f.diretor = :diretor")
-    , @NamedQuery(name = "Filme.findByDatalancamento", query = "SELECT f FROM Filme f WHERE f.datalancamento = :datalancamento")})
+//@NamedQueries({
+//    @NamedQuery(name = "Filme.findAll", query = "SELECT f FROM Filme f")
+//    , @NamedQuery(name = "Filme.findByIdfilme", query = "SELECT f FROM Filme f WHERE f.idfilme = :idfilme")
+//    , @NamedQuery(name = "Filme.findByTitulo", query = "SELECT f FROM Filme f WHERE f.titulo = :titulo")
+//    , @NamedQuery(name = "Filme.findByDiretor", query = "SELECT f FROM Filme f WHERE f.diretor = :diretor")
+//    , @NamedQuery(name = "Filme.findByDatalancamento", query = "SELECT f FROM Filme f WHERE f.datalancamento = :datalancamento")})
 public class Filme implements Serializable {
 
     private static final long serialVersionUID = 1L;

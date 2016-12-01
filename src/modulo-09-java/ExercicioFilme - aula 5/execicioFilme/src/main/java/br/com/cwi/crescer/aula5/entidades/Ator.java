@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "ATOR")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Ator.findAll", query = "SELECT a FROM Ator a")
-    , @NamedQuery(name = "Ator.findByIdator", query = "SELECT a FROM Ator a WHERE a.idator = :idator")
-    , @NamedQuery(name = "Ator.findByNomeator", query = "SELECT a FROM Ator a WHERE a.nomeator = :nomeator")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Ator.findAll", query = "SELECT a FROM Ator a")
+//    , @NamedQuery(name = "Ator.findByIdator", query = "SELECT a FROM Ator a WHERE a.idator = :idator")
+//    , @NamedQuery(name = "Ator.findByNomeator", query = "SELECT a FROM Ator a WHERE a.nomeator = :nomeator")})
 public class Ator implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "GENERO")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Genero.findAll", query = "SELECT g FROM Genero g")
-    , @NamedQuery(name = "Genero.findByIdgenero", query = "SELECT g FROM Genero g WHERE g.idgenero = :idgenero")
-    , @NamedQuery(name = "Genero.findByDescricao", query = "SELECT g FROM Genero g WHERE g.descricao = :descricao")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Genero.findAll", query = "SELECT g FROM Genero g")
+//    , @NamedQuery(name = "Genero.findByIdgenero", query = "SELECT g FROM Genero g WHERE g.idgenero = :idgenero")
+//    , @NamedQuery(name = "Genero.findByDescricao", query = "SELECT g FROM Genero g WHERE g.descricao = :descricao")})
 public class Genero implements Serializable {
 
     private static final long serialVersionUID = 1L;

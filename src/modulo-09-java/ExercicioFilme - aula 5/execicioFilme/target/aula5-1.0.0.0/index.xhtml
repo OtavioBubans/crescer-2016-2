@@ -11,7 +11,7 @@
     <ui:define name="form">
 
         <div class="form-group"> 
-            <h:outputLabel for="nome" value="idiomaNome "></h:outputLabel>
+            <h:outputLabel for="nome" value="Idioma "></h:outputLabel>
             <h:inputText id="nome" value="#{cadastroIdioma.idioma.nomeidioma}" styleClass="form-control"/>
         </div>
 
@@ -22,13 +22,13 @@
         <h:dataTable id="idiomas" value="#{cadastroIdioma.idiomas}" var="idioma" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="ididioma"/>
+                    <h:outputText value="ID"/>
                 </f:facet>
                 <h:outputText value="#{idioma.ididioma}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="nomeIdioma"/>
+                    <h:outputText value="Nome"/>
                 </f:facet>
                 <h:outputText value="#{idioma.nomeidioma}"/>
             </h:column>

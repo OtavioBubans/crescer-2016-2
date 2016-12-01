@@ -29,12 +29,12 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "CLASSIFICACAO")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Classificacao.findAll", query = "SELECT c FROM Classificacao c")
-    , @NamedQuery(name = "Classificacao.findByIdclassificacao", query = "SELECT c FROM Classificacao c WHERE c.idclassificacao = :idclassificacao")
-    , @NamedQuery(name = "Classificacao.findByDescricao", query = "SELECT c FROM Classificacao c WHERE c.descricao = :descricao")
-    , @NamedQuery(name = "Classificacao.findByIdade", query = "SELECT c FROM Classificacao c WHERE c.idade = :idade")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Classificacao.findAll", query = "SELECT c FROM Classificacao c")
+//    , @NamedQuery(name = "Classificacao.findByIdclassificacao", query = "SELECT c FROM Classificacao c WHERE c.idclassificacao = :idclassificacao")
+//    , @NamedQuery(name = "Classificacao.findByDescricao", query = "SELECT c FROM Classificacao c WHERE c.descricao = :descricao")
+//    , @NamedQuery(name = "Classificacao.findByIdade", query = "SELECT c FROM Classificacao c WHERE c.idade = :idade")})
 public class Classificacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
