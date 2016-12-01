@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.cwi.crescer.aula5;
-
+package br.com.cwi.crescer.aula5.entidades;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,13 +13,13 @@ import javax.persistence.PersistenceContext;
  *
  * @author Otávio
  */
-public class GeneroBean extends AbstractDao <Genero, BigDecimal> {
+public class AtorBean extends AbstractDao<Ator, BigDecimal> {
     
     @PersistenceContext(unitName = "crescer")
     private EntityManager entityManager;
 
-    public GeneroBean() {
-        super(Genero.class);
+    public AtorBean() {
+        super(Ator.class);
     }
 
     @Override
@@ -29,8 +28,10 @@ public class GeneroBean extends AbstractDao <Genero, BigDecimal> {
     }
 
     @Override
-    public List<Genero> findAll() {
-        return this.getEntityManager().createQuery("select g from Pessoa g").getResultList();
+    public List<Ator> findAll() {
+        return this.getEntityManager().createQuery("select a from Pessoa a").getResultList();
     }
     
 }
+    
+    

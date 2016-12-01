@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.cwi.crescer.aula5;
+package br.com.cwi.crescer.aula5.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -27,56 +27,57 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Otávio
  */
 @Entity
-@Table(name = "IDIOMA")
+@Table(name = "GENERO")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Idioma.findAll", query = "SELECT i FROM Idioma i")
-    , @NamedQuery(name = "Idioma.findByIdidioma", query = "SELECT i FROM Idioma i WHERE i.ididioma = :ididioma")
-    , @NamedQuery(name = "Idioma.findByNomeidioma", query = "SELECT i FROM Idioma i WHERE i.nomeidioma = :nomeidioma")})
-public class Idioma implements Serializable {
+    @NamedQuery(name = "Genero.findAll", query = "SELECT g FROM Genero g")
+    , @NamedQuery(name = "Genero.findByIdgenero", query = "SELECT g FROM Genero g WHERE g.idgenero = :idgenero")
+    , @NamedQuery(name = "Genero.findByDescricao", query = "SELECT g FROM Genero g WHERE g.descricao = :descricao")})
+public class Genero implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "IDIDIOMA")
-    private BigDecimal ididioma;
-    
+    @Column(name = "IDGENERO")
+    private BigDecimal idgenero;
+   
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
-    @Column(name = "NOMEIDIOMA")
-    private String nomeidioma;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idiomaIdidioma")
-    private Collection<Filme> filmeCollection;
+    @Column(name = "DESCRICAO")
+    private String descricao;
+    
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "generoIdgenero")
+//    private Collection<Filme> filmeCollection;
 
-    public Idioma() {
+    public Genero() {
     }
 
-    public Idioma(BigDecimal ididioma) {
-        this.ididioma = ididioma;
+    public Genero(BigDecimal idgenero) {
+        this.idgenero = idgenero;
     }
 
-    public Idioma(BigDecimal ididioma, String nomeidioma) {
-        this.ididioma = ididioma;
-        this.nomeidioma = nomeidioma;
+    public Genero(BigDecimal idgenero, String descricao) {
+        this.idgenero = idgenero;
+        this.descricao = descricao;
     }
 
-    public BigDecimal getIdidioma() {
-        return ididioma;
+    public BigDecimal getIdgenero() {
+        return idgenero;
     }
 
-    public void setIdidioma(BigDecimal ididioma) {
-        this.ididioma = ididioma;
+    public void setIdgenero(BigDecimal idgenero) {
+        this.idgenero = idgenero;
     }
 
-    public String getNomeidioma() {
-        return nomeidioma;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNomeidioma(String nomeidioma) {
-        this.nomeidioma = nomeidioma;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 }

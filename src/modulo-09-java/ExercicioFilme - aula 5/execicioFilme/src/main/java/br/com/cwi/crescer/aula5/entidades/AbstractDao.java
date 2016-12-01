@@ -1,4 +1,4 @@
-package br.com.cwi.crescer.aula5;
+package br.com.cwi.crescer.aula5.entidades;
 
 import javax.persistence.EntityManager;
 

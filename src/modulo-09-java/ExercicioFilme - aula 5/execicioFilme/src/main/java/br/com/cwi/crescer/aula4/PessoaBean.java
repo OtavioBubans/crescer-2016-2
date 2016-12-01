@@ -1,6 +1,6 @@
 package br.com.cwi.crescer.aula4;
 
-import br.com.cwi.crescer.aula5.AbstractDao;
+import br.com.cwi.crescer.aula5.entidades.AbstractDao;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
