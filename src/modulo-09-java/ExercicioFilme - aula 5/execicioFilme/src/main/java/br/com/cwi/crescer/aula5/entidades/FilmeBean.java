@@ -7,6 +7,7 @@ package br.com.cwi.crescer.aula5.entidades;
 
 import java.math.BigDecimal;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +15,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Otávio
  */
+@Stateless
 public class FilmeBean extends AbstractDao <Filme, BigDecimal> {
     
     @PersistenceContext(unitName = "crescer")
@@ -30,7 +32,7 @@ public class FilmeBean extends AbstractDao <Filme, BigDecimal> {
 
     @Override
     public List<Filme> findAll() {
-        return this.getEntityManager().createQuery("select f from Pessoa f").getResultList();
+        return this.getEntityManager().createQuery("select f from Filme f").getResultList();
     }
     
 }

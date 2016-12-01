@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<ui:composition  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+    
+ </ui:composition>   
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+              
+            <h:outputLabel for="nome" value="Nome"></h:outpuLabel>
+            <h:inputText id="nome" value="#{hello.pessoa.nome}"></h:inputText>
+                
+            <h:outputLabel for="sobrenome" value="Sobrenome"></h:outputLabel>
+            <h:inputText id="sobrenome" value="#{hello.pessoa.sobrenome}"></h:inputText>
+            </h:panelGrid>
+            
+            <h1>
+               <h:inputText value="#{hello.pessoa}"/>
+             </h1>  
+            
+            <h:commandButton type="submit" value="Enviar"/>
+
+    </h:form>
+    </h:body>
+    
+    
+   
+</html>

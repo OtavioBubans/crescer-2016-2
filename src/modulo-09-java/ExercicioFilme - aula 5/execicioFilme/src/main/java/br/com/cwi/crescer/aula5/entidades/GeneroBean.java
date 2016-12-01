@@ -7,6 +7,7 @@ package br.com.cwi.crescer.aula5.entidades;
 
 import java.math.BigDecimal;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +15,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Otávio
  */
+@Stateless
 public class GeneroBean extends AbstractDao <Genero, BigDecimal> {
     
     @PersistenceContext(unitName = "crescer")
@@ -30,7 +32,7 @@ public class GeneroBean extends AbstractDao <Genero, BigDecimal> {
 
     @Override
     public List<Genero> findAll() {
-        return this.getEntityManager().createQuery("select g from Pessoa g").getResultList();
+        return this.getEntityManager().createQuery("select g from Genero g").getResultList();
     }
     
 }

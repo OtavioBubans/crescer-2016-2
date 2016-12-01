@@ -10,16 +10,19 @@ import br.com.cwi.crescer.aula5.entidades.IdiomaBean;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Otávio
  */
+
+@ManagedBean
+@ViewScoped
 public class CadastroIdioma {
     
-     @EJB
+    @EJB
     private IdiomaBean idiomaBean;
     
     private Idioma idioma;
@@ -29,31 +32,29 @@ public class CadastroIdioma {
     public void init() {
         this.idioma = new Idioma();
         this.idiomas = idiomaBean.findAll();
-        
-        //this.idioma.sort((a,b)-> a.getIdPessoa().compareTo(b.getIdPessoa()));
+        this.idiomas.sort((a,b)-> a.getIdidioma().compareTo(b.getIdidioma()));
     }
 
-    public Idioma getPessoa() {
+    public Idioma getIdioma() {
         return idioma;
     }
 
-    public void setPessoa(Idioma idioma) {
+    public void setIdioma(Idioma idioma) {
         this.idioma = idioma;
     }
 
-    public List<Idioma> getPessoas() {
+    public List<Idioma> getIdiomas() {
         return idiomas;
     }
 
-    public void setPessoas(List<Idioma> idiomas) {
+    public void setIdioma(List<Idioma> idiomas) {
         this.idiomas = idiomas;
     }
 
     public void adicionar() {
         idiomaBean.insert(idioma);
         this.init();
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.
-                SEVERITY_INFO, "Teste", "teste"));
+      //  Idioma idioma = new Idioma();
     }
 
 }
